@@ -52,6 +52,16 @@ Which C/C++ missing 🤣
 
 Named `cargo`
 
+Create new project with `cargo`
+
+```bash
+cargo new getting-started
+cargo build
+cargo run
+
+```
+
+`Cargo.toml` likes `package.js`
 
 
 
