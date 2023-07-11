@@ -27,6 +27,27 @@ let mut guess = String::new();
 io::stdin().read_line(&mut guess);
 ```
 
+This is just read the reference.
+```rust
+guess.cmp(&secretNumber);
+```
+
+### Add dependency
+
+in `Cargo.toml`
+```rust 
+[dependencies]
+rand = "0.5.5"
+```
+
+then `cargo build`
+
+### Naming 
+You can define the same name in the same scope. What's crazzy is that! 🤪
+
+### match 
+  just like if,else, switch case 
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 ## Author
