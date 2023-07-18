@@ -1,10 +1,14 @@
 fn main() {
     println!("Hello, world!");
 
-    let x = 5;
-    println!("This is the value of {}", x);
-    let x = 6.2;
-    print!("This is the value of {}", x);
+    // integers 
+    let a = 19_993; // decimal 
+    let b = 0xff; // hex 
+    let c = 0o77; // octal
+    let d = 0b1111_0000; // binary
+    let e = b'A'; // Byte (u8 only)
 
-    const MY_BANK_NUMBER: u32 = 100_000;
+    let f: u8 = 256;
+    // Floating-point numbers
+
 }
