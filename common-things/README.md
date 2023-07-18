@@ -53,6 +53,14 @@ let f: u8 = 256;
 - Tuples
 - Array 
 
+## Return 
+Replace `return` by just var name 
+
+```rust
+sum
+// return sum;
+```
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
