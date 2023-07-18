@@ -11,6 +11,12 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 1](./getting-started/README.md)
 
+
+### Video #2
+<b> Programming a Guessing Game in Rust! <b/>
+
+[Video 2](./guessing-game/README.md)
+
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 ## Author
 
