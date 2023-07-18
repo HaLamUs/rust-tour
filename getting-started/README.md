@@ -67,6 +67,7 @@ cargo run
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
+
 ## Author
 
 This repo was developed by [@lamha](https://github.com/HaLamUs). 
