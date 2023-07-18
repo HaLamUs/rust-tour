@@ -64,7 +64,8 @@ sum
 ## Control flow 
 - if, else 
 - loop 
-
+- while 
+- fot loop 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
