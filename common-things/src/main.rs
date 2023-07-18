@@ -24,4 +24,9 @@ fn main() {
     // remainder 
     let remainder = 45 % 2;
 
+    // Character 
+    let c = 'z';
+    let z = 'Z';
+    let heart = '❌';
+
 }
