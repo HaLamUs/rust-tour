@@ -1,32 +1,16 @@
 fn main() {
     println!("Hello, world!");
 
-    // integers 
-    let a = 19_993; // decimal 
-    let b = 0xff; // hex 
-    let c = 0o77; // octal
-    let d = 0b1111_0000; // binary
-    let e = b'A'; // Byte (u8 only)
+    // Compound types 
+    let tup = ("Let's get party", 20_232);
+    let (channel, sub_count) = tup;
+    let sub_count = tup.1;
 
-    let f: u8 = 255;
-    // Floating-point numbers
-    let f = 2.0;
-    let g: f32 = 3.0;
+    let error_codes = [200, 404, 500];
+    let not_found = error_codes[1];
 
-    // addition 
-    let sum = 5 + 10; 
-    // subtraction 
-    let difference = 86.3 - 43.2;
-    // multiplication 
-    let product = 4*8;
-    // division 
-    let quotient = 56.8 / 12.3;
-    // remainder 
-    let remainder = 45 % 2;
-
-    // Character 
-    let c = 'z';
-    let z = 'Z';
-    let heart = '❌';
+    let x = error_codes[3];
+    
+    let byte = [0; 8];
 
 }
