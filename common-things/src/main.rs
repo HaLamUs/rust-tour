@@ -8,7 +8,20 @@ fn main() {
     let d = 0b1111_0000; // binary
     let e = b'A'; // Byte (u8 only)
 
-    let f: u8 = 256;
+    let f: u8 = 255;
     // Floating-point numbers
+    let f = 2.0;
+    let g: f32 = 3.0;
+
+    // addition 
+    let sum = 5 + 10; 
+    // subtraction 
+    let difference = 86.3 - 43.2;
+    // multiplication 
+    let product = 4*8;
+    // division 
+    let quotient = 56.8 / 12.3;
+    // remainder 
+    let remainder = 45 % 2;
 
 }
