@@ -1,11 +1,14 @@
 fn main() {
-    my_function(11);
-}
+  // control flow 
+  let number = 6;
+  if number < 10 {
+      println!("first condition was true");
+  } else if number < 22 {
+    println!("Second condition was true")
+  } else {
+    println!("Condition was false")
+  }
 
-fn my_function(x: i32) -> i32 {
-  println!("The mine function.");
-  println!("The value of x is: {}", x);
-  let sum = x + 122;
-  sum
-  // return sum;
+  let condition = true; 
+  let number = if condition { 5 } else { 6 };
 }
