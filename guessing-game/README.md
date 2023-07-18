@@ -43,13 +43,28 @@ rand = "0.5.5"
 then `cargo build`
 
 ### Naming 
-You can define the same name in the same scope. What's crazzy is that! 🤪
+You can define the same name in the same scope. 
+
+What's crazzy is that! 🤪
+It's called shadowing.
+
+Shadowing meaning convert one type to another type but we keep the name
 
 ### match 
   just like if,else, switch case 
 
 
+### Add .zshrc 
+
+https://stackoverflow.com/a/50711056
+
+```bash
+# Add Rust to $PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+```
+
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
+
 ## Author
 
 This repo was developed by [@lamha](https://github.com/HaLamUs). 
