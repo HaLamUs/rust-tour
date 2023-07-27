@@ -12,7 +12,8 @@ Video
 ## Memory management 
 - Garbage collection 
   
-  Cons: We dont know when GC will clean up the mem, when it does, it slows down our app
+  Cons: We dont know when GC will clean up the mem, when it does, it slows down our app.
+
   GC is a piece of code, we have to include within our program 
   
   Ex: Swift, Java, C# 
@@ -38,13 +39,15 @@ Video
 ## Memory laid out 
 - Stack
 
-  fixed size, stack contains stackframe which is local functions in our program, stackframe stores local var of functions 
-  Size of stackframe calculated at compile time 
+  fixed size, stack contains stackframe which is local functions in our program, stackframe stores local var of functions.
+
+  Size of stackframe calculated at compile time. 
   When functions excuted, it popped out of stack with its var 
 
 - Heap 
   
-  dynamic size, if var is dynamic size, we use Heap to store it and get back the pointer to save in Stack 
+  dynamic size, if var is dynamic size, we use Heap to store it and get back the pointer to save in Stack
+
   Pushing to Stack is faster than allocate on Heap, same as accessing data.
 
 
@@ -71,7 +74,7 @@ let s: String = String::from("hello") // changeable
 
 ## Moving 
 ```Rust
-ket x: i32 = 6;
+let x: i32 = 6;
 let y: i32 = x; // copy
 
 let s1: String = String::from("hello");
@@ -99,7 +102,7 @@ makes_copy(x);
 println!("{}", x);
 
 
-fun makes_copy(some_integer: i32) {
+fn makes_copy(some_integer: i32) {
   println!("{}", some_integer);
 }
 
@@ -113,7 +116,7 @@ let s1: String = gives_ownership();
 println!("s1 {}", s1);
 
 
-fun gives_ownership() -> String {
+fn gives_ownership() -> String {
   let some_string: String = String::from("Hello");
   some_string
 }
@@ -122,14 +125,15 @@ fun gives_ownership() -> String {
 let s2: String = String::from("hello");
 let s3 = takes_and_gives_back(s2);
 
-fun takes_and_gives_back(a_string: String) -> String {
+fn takes_and_gives_back(a_string: String) -> String {
   a_string
 }
 
 ```
 
 ## Reference 
-Moving the ownership and backout is tedious 
+Moving the ownership and backout is tedious.
+
 What if we just want to use a var without taking the ownership --> reference
 
 ### Problem 
@@ -138,7 +142,7 @@ let s1: String = String::from("hello");
 let (s2, len) = calculate_length(s1);
 println!("The length of '{} is {}.", s2, len);
 
-fun calculate_length(s: String) -> (String, usize) {
+fn calculate_length(s: String) -> (String, usize) {
   let length = s.len();
   (s, length)
 }
@@ -148,7 +152,7 @@ fun calculate_length(s: String) -> (String, usize) {
 let (s2, len) = calculate_length(&s1);
 
 // below s is pointer, point to s1, and point to the string in the heap
-fun calculate_length(s: &String) -> usize {
+fn calculate_length(s: &String) -> usize {
   let length = s.len();
   length
 } // after this, we drop s, but s1 still ok 
@@ -165,8 +169,7 @@ let s1: String = String::from("hello");
 change(&s1)
 
 fn change(some_string: &String) {
-  some_string.push_str("world");
-}
+  some_string.push_str("world"); // <--- err
 
 // fix using mutable ref 
 let mut s1: String = String::from("hello");
@@ -188,19 +191,19 @@ You can borrow ONE mutable reference at a time
 let mut s1: String = String::from("hello");
 
 let r1 = &mut s;
-let r2= &mut s; // <--  error 
+let r2 = &mut s; // <--  error 
 
 ```
 
-🟡 You can NOT have a mutable ref when an IMmuatable ref already exists coz Immutable don't expect underlying value to change 
+🟡 You can NOT have a mutable ref when an Immuatable ref already exists coz Immutable don't expect underlying value to change 
 
-Remember the scope b/w first introduce the var and the last using it 
+Remember the scope of var b/w first introduce the var and the last using it 
 
 ```Rust
 let mut s1: String = String::from("hello");
 
 let r1 = &s;
-let r2= &s;
+let r2 = &s;
 let r3 = &mut s; // <-- error 
 
 println!("{} {}", r1, r2);
@@ -241,9 +244,9 @@ Problem: We want to return the first word of the string without taking its owner
 
 let mut s = String::from("hello");
 let word = first_word(&s);
-s.clear(); // after this line, word still 5 --> 🔴 error prone we want SYNC when s.clear --> word = 0 
+s.clear(); // after this line, word still 5 --> 🔴 error prone we want to SYNC when s.clear --> word = 0 
 
-// we will return the index of 1s word
+// we will return the index of 1st word
 fn first_word(s: &String) -> usize {
   let bytes = s.as_bytes();
 
