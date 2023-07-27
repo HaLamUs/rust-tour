@@ -116,6 +116,22 @@ impl Rectangle {
 
 ```
 
+## Associated functions 
+Not like method struct, it doesnt need `&self`
+
+Like static func in Swift 
+
+
+```Rust
+impl Rectangle {
+  fn square(size: u32) -> Rectangle {
+    Rectangle { width: size, height: size }
+  }
+}
+
+```
+
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
