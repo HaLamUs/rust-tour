@@ -22,6 +22,10 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 3](./common-things/README.md)
 
+### Video #4
+<b> Understanding Ownership in Rust <b/>
+
+[Video 4](./ownership/README.md)
 
 
 
