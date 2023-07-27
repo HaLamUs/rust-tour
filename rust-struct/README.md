@@ -10,6 +10,10 @@ Video
 </div>
 
 
+## Struct 
+The way you define a new data type 
+
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
