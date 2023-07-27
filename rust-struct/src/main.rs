@@ -1,33 +1,37 @@
-struct User {
-  username: String,
-  email: String,
-  sign_in_count: u64,
-  active: bool,
+
+#[derive(Debug)]
+struct Rectangle {
+  width: u32,
+  height: u32,
+}
+
+impl Rectangle {
+  // 🟡 In Swift doesnt need to pass &self
+  fn area(&self) -> u32 {
+    self.width * self.height
+  }
+
+  fn can_hold(&self, other: &Rectangle) -> bool {
+    self.width > other.width && self.height > other.height
+  }
+
 }
 
 fn main() {
-  let mut user1 = User {
-    email: String::from("lam"),
-    username: String::from("nitendo"),
-    active: true,
-    sign_in_count: 1
+  let rect = Rectangle {
+    width: 30,
+    height: 50,
   };
-  let name = user1.username;
-  user1.username = String::from("ha");
 
-  let user2 = build_user(
-    String::from("keoly@gmail.com"), 
-  String::from("sony")
+  let rect2 = Rectangle { width: 20, height: 20 };
+  let rect3 = Rectangle{ width: 60, height: 60 };
+  println!("rect can hold rect1: {}", rect.can_hold(&rect2));
+  println!("rect can hold rect2: {}", rect.can_hold(&rect3));
+
+  println!("Rect {:#?}", rect);
+
+  println!(
+    "The are of the rectangle is {} square pixels.",
+    rect.area()
   );
-  
-  let user3 = User { 
-    email: String::from("chanhxa@gmail.com"), 
-    username: String::from("fox"),
-    ..user2
-  };
-}
-
-
-fn build_user(email: String, username: String) -> User {
-  User { username, email, sign_in_count: 1, active: true }
 }
