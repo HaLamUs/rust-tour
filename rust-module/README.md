@@ -128,6 +128,31 @@ use std:: {Self, Write};
 pub use crate::front_of_house::hosting;
 
 ```
+## Define modules 
+
+```Rust
+//front_of_house.rs
+pub mod hosting; // 🟡
+
+// front_of_house/hosting.rs
+pub fn add_to_waitlist() {
+   println!("This is the front of house");
+}
+
+//lib.rs
+
+mod front_of_house;
+
+use crate::front_of_house::hosting;
+
+pub fn eat_at_restaurant() {
+  hosting::add_to_waitlist();
+}
+
+
+
+```
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
