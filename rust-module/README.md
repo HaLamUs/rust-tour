@@ -79,8 +79,55 @@ mod back_of_house {
 }
 ```
 
+Enum
+
+```Rust
+mod back_of_house {
+  pub enum Appetizer {
+    Soup,
+    Salad,
+  }
+}
+
+pub fn eat_at_restaurant() {
+  let order1 = back_of_house::Appetizer::Soup;
+}
+```
+
+## Short
+
+```Rust
+// use crate::front_of_house::hosting;
+use self::front_of_house::hosting;
+
+pub fn eat_at_restaurant() {
+  // front_of_house::hosting::add_to_waitlist();
+  hosting::add_to_waitlist();
+}
+
+use std::fmt::Result;
+use std::io::Result as IOResult;
 
 
+// Before 
+use rand:: Rng;
+use rand:: ErrorKind::Transient;
+
+use std::io;
+use std::io::Write;
+
+// After 
+use rand:: {Rng, ErrorKind::Transient};
+use std:: {Self, Write};
+
+```
+
+## Publish fn 
+
+```Rust
+pub use crate::front_of_house::hosting;
+
+```
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
