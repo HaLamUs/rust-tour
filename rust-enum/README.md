@@ -10,7 +10,16 @@ Video
 </div>
 
 
+## Enum 
+Enum allows enumerate variants
 
+```Rust
+enum IpAddrKind {
+  V4, 
+  V6,
+}
+
+```
 
 
 
