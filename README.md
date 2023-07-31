@@ -33,6 +33,12 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 [Video 5](./rust-struct/README.md)
 
 
+### Video #6
+<b> Enums and Pattern Matching in Rust <b/>
+
+[Video 6](./rust-enum/README.md)
+
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
@@ -42,3 +48,7 @@ This repo was developed by [@lamha](https://github.com/HaLamUs).
 Follow or connect with me on [my LinkedIn](https://www.linkedin.com/in/lamhacs). 
 
 ## License
+The source code for the site is licensed under the MIT license,
+
+
+<img alt="Rate me" src="./assets//rate-me.gif" width="60%">
