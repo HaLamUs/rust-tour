@@ -29,8 +29,46 @@ enum IpAddrKind {
   V6(String),
 }
 
+enum IpAddrKind {
+  V4(u8, u8, u8, u8), 
+  V6(String),
+}
+
+
 ```
 
+## Enum vs Struct 
+
+```Rust
+enum Message {
+  Quit,
+  Move { x: i32, y: i32}, // struct 
+  Write(String),
+  ChangeColor(i32, i32, i32),
+}
+
+struct QuitMessage; // unit struct 
+struct MoveMessage {
+  x: i32,
+  y: i32,
+}
+struct WriteMessage(String); // tuple struct
+struct ChangeColorMessage(i32, i32, i32); // tuple struct
+
+```
+
+Using struct to define data type we need 4 data type within Enum we can grouped under `Message` type
+
+
+## Implement Enum
+
+```Rust
+impl Message {
+  fn some_log() {
+    println!("Hi Ken!");
+  }
+}
+```
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
