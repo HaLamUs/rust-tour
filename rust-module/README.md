@@ -31,10 +31,8 @@ Everything is private by default
 
 ```Rust
 mod front_of_house {
-  mod hosting {
-    fn add_to_waitlist() {}
-
-    fn seat_at_table() {}
+  pub mod hosting {
+    pub fn add_to_waitlist() {}
   }
 
 }
@@ -47,6 +45,42 @@ pub fn eat_at_restaurant() {
   front_of_house::hosting::add_to_waitlist();   
 }
 ```
+
+Struct is private and its properties too.
+
+```Rust
+mod back_of_house {
+  struct Breakfast {
+    toast: String,
+    seasonal_fruit: String,
+  }
+
+  impl Breakfast {
+    fn summer(toast: &str) -> Breakfast {
+      Breakfast { toast: String::from(toast), seasonal_fruit: String::from("peaches") }
+    }
+  }
+}
+```
+
+`super` keyword
+
+```Rust
+
+fn serve_order() {}
+
+mod back_of_house {
+  fn fix_incorrect_order() {
+    cook_order();
+    super::serve_order();
+  }
+
+  fn cook_order() {}
+}
+```
+
+
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
