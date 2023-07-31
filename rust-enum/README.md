@@ -21,6 +21,16 @@ enum IpAddrKind {
 
 ```
 
+Store data inside enum
+
+```Rust
+enum IpAddrKind {
+  V4(String), 
+  V6(String),
+}
+
+```
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
