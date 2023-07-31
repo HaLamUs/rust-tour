@@ -1,9 +1,34 @@
 
+#[derive(Debug)]
+enum UsState {
+  Alabama,
+  Alaska,
+  Arizona,
+  //....
+}
+
+enum Coin {
+  Penny,
+  Nickel,
+  Dime,
+  Quarter(UsState),
+}
+
+fn value_in_cents(coin: Coin) -> u8 {
+  match coin {
+      Coin::Penny => {
+        println!("Luckt penny!");
+        1
+      }
+      Coin::Nickel => 5,
+      Coin::Dime => 10,
+      Coin::Quarter(state) => {
+        println!("State quarter from {:?} !", state);
+        25
+      }
+  }
+}
 
 fn main() {
-  let x: i8 = 5;
-  let y: Option<i8> = Some(5);
-
-  // let sum = x + y; // 🔴 Error 
-  let sum = x + y.unwrap_or(9);
+  value_in_cents(Coin::Quarter(UsState::Alaska));
 }

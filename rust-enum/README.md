@@ -82,6 +82,25 @@ enum Option<T> {
 ```
 
 
+## Matching 
+You actually can skip the `return`
+
+```Rust
+fn value_in_cents(coin: Coin) -> u8 {
+  match coin {
+      Coin::Penny => {
+        println!("Luckt penny!");
+        1 // return 1
+      }
+      Coin::Nickel => 5,
+      Coin::Dime => 10,
+      Coin::Quater => 25,
+  }
+
+```
+
+
+
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
 ## Author
