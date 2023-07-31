@@ -48,7 +48,7 @@ This repo was developed by [@lamha](https://github.com/HaLamUs).
 Follow or connect with me on [my LinkedIn](https://www.linkedin.com/in/lamhacs). 
 
 ## License
-The source code for the site is licensed under the MIT license,
+The source code for the site is licensed under the MIT license, [MIT](https://opensource.org/license/mit/)
 
 
 <img alt="Rate me" src="./assets//rate-me.gif" width="60%">
