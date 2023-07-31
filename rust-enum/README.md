@@ -99,6 +99,15 @@ fn value_in_cents(coin: Coin) -> u8 {
 
 ```
 
+Default case 
+
+```Rust
+match x {
+      _ => None,
+      Some(i) => Some(i +1), // need wrap return in Some 
+  }
+```
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
