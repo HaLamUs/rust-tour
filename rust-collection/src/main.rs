@@ -1,11 +1,12 @@
 fn main() {
-    let a = [1, 2, 3];
-    let mut v: Vec<i32> = Vec::new();
-    v.push(1);
-    v.push(1);
-    v.push(1);
+  let mut v = vec![1, 2, 3, 4, 5];
 
-    {
-      let v2 = vec![1, 2, 3];
-    } // out here v2 will drop
+  for i in &mut v {
+    *i += 50;
+    // println!("{}", i);
+  }
+  for i in &v {
+    println!("{}", i);
+  }
+
 }

@@ -13,9 +13,45 @@ Video
 Collection is unlike Array, Enum. It allocated on Heap, which means it's size can grow or shrink as needed.
 Ex: Vector, string, hashmap 
 
+## Vector 
+
+```Rust
+let mut v = vec![1, 2, 3, 4, 5];
+
+  let third = &v[2]; 
+  match v.get(2) {
+      Some(third) => println!("The 3rd element is {}", third),
+      None => println!("3rd element 404"),
+  }
+```
+
+Ampersand 
+
+https://stackoverflow.com/a/43036358
+
+```Rust
+
+  let v2 = vec![1, 2, 3];
+  for i in &v2 {}
+  for i in &v2 {}
+
+  let v3 = vec![1, 2, 3];
+  for i in v3 {}
+  for i in v3 {} // <--  Error 
 
 
+```
 
+Borrow and change value 
+
+```Rust
+et mut v = vec![1, 2, 3, 4, 5];
+
+  for i in &mut v { // &mut v mean borrow as mutable
+    *i += 50;
+    println!("{}", i);
+  }
+```
 
 
 
