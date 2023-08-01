@@ -53,7 +53,27 @@ et mut v = vec![1, 2, 3, 4, 5];
   }
 ```
 
+```Rust
 
+enum SpreadsheetCell {
+  Int(i32),
+  Float(f64),
+  Text(String),
+}
+
+
+let row = vec![
+  SpreadsheetCell:: Int(3),
+  SpreadsheetCell::Text(String::from("blue")),
+  SpreadsheetCell::Float(10.12),
+]
+
+match &row[1] {
+  SpreadsheetCell::Int(i) => printl!("{}", i),
+  _ => println!("Not a integer!")
+}
+
+```
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
