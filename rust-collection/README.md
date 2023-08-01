@@ -9,6 +9,12 @@ Video
   <a href="https://www.youtube.com/watch?v=Zs-pS-egQSs"><img src="https://img.youtube.com/vi/Zs-pS-egQSs/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
+## Collection 
+Collection is unlike Array, Enum. It allocated on Heap, which means it's size can grow or shrink as needed.
+Ex: Vector, string, hashmap 
+
+
+
 
 
 
