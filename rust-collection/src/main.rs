@@ -1,17 +1,13 @@
 
-use unicode_segmentation::UnicodeSegmentation;
+use std::collections::HashMap;
 fn main() {
-  let hello = String::from("Hello");
-  // let c = hello[0]; // error 
-  for b in hello.bytes() {
-    println!("{}", b);
-  }
+  let text = "Hello world wonderful world";
+  let mut map = HashMap::new();
 
-  for b in hello.chars() {
-    println!("{}", b);
+  for word in text.split_whitespace() {
+    let count = map.entry(word).or_insert(0);
+    // above func return MUTable reference to our value 
+    *count += 1;
   }
-
-  for b in hello.graphemes(true) {
-    println!("{}", b);
-  }
+  println!("{:?}", map);
 }

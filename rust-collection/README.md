@@ -51,6 +51,7 @@ Imagine we have a simple function that calculates the length of a string. This f
 1. But does it need permission to modify it? No. 
 2. When the length function is finished, should we drop the string from memory? No. 
 3. This means the length function needs only read-access and it only needs a temporary view of the string rather than a permanent version. 
+4. We want to do passing the ownership? Moo 
 
 🔑 This is what the `&variable` notation means in Rust. 
 
@@ -109,7 +110,7 @@ It backwards compatiable with ascii and that's because the first 128 symbols of 
 UTF-8 is variable-width char encoding.
 Notice the WIDTH (ascii only using 1 byte) BUT UTF-8 can use 1, 2, 4, 8 bytes to represent chars 
 
-## Asterisk 
+## Asterisk == De-reference 
 `*` to modify the value
 ```Rust
 fn main() {
@@ -167,6 +168,32 @@ Rust not know which represent you want to use bytes, scalar or clusters
 <img src="./images/represent.png">
 
 
+## Hashmap 
+(Key, Value)
+
+```Rust
+
+use std::collections::HashMap;
+fn main() {
+  let blue = String::from("Blue");
+  let yellow = String:: from("Yellow");
+
+  let mut scores = HashMap:: new();
+
+  scores.insert(blue,  10);
+  scores.insert(yellow, 50);
+
+  // println!("{}", blue); // Error, because we move the ownership to hashmap 
+
+  let team_name = String::from("Blue");
+  let score = scores.get(&team_name);
+
+  for (key, value) in &scores {
+    println!("{}: {}", key, value);
+  }
+}
+
+```
 
 
 
