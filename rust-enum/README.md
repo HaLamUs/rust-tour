@@ -1,4 +1,4 @@
-# Rust enum
+# Rust Error handling
 
 [⬅ Back](../README.md)
 
@@ -6,106 +6,14 @@
 Video
 
 <div>
-  <a href="https://www.youtube.com/watch?v=DSZqIJhkNCM"><img src="https://img.youtube.com/vi/DSZqIJhkNCM/0.jpg" alt="IMAGE ALT TEXT"></a>
+  <a href="https://www.youtube.com/watch?v=wM6o70NAWUI"><img src="https://img.youtube.com/vi/wM6o70NAWUI/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
 
-## Enum 
-Enum allows enumerate variants
+## Panic
 
 ```Rust
-enum IpAddrKind {
-  V4, 
-  V6,
-}
-
-```
-
-Store data inside enum
-
-```Rust
-enum IpAddrKind {
-  V4(String), 
-  V6(String),
-}
-
-enum IpAddrKind {
-  V4(u8, u8, u8, u8), 
-  V6(String),
-}
-
-
-```
-
-## Enum vs Struct 
-
-```Rust
-enum Message {
-  Quit,
-  Move { x: i32, y: i32}, // struct 
-  Write(String),
-  ChangeColor(i32, i32, i32),
-}
-
-struct QuitMessage; // unit struct 
-struct MoveMessage {
-  x: i32,
-  y: i32,
-}
-struct WriteMessage(String); // tuple struct
-struct ChangeColorMessage(i32, i32, i32); // tuple struct
-
-```
-
-Using struct to define data type we need 4 data type within Enum we can grouped under `Message` type
-
-
-## Implement Enum
-
-```Rust
-impl Message {
-  fn some_log() {
-    println!("Hi Ken!");
-  }
-}
-```
-
-## Option enum 
-
-```Rust
-
-enum Option<T> {
-  Some(T),
-  None, // store no value
-}
-
-```
-
-
-## Matching 
-You actually can skip the `return`
-
-```Rust
-fn value_in_cents(coin: Coin) -> u8 {
-  match coin {
-      Coin::Penny => {
-        println!("Luckt penny!");
-        1 // return 1
-      }
-      Coin::Nickel => 5,
-      Coin::Dime => 10,
-      Coin::Quater => 25,
-  }
-
-```
-
-Default case 
-
-```Rust
-match x {
-      _ => None,
-      Some(i) => Some(i +1), // need wrap return in Some 
-  }
+panic!("Crash and burn")
 ```
 
 
