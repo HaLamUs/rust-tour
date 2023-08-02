@@ -1,11 +1,17 @@
+
+use unicode_segmentation::UnicodeSegmentation;
 fn main() {
-  let mut v = vec![1, 2, 3, 4, 5];
-  for i in &mut v {
-    *i += 50;
-    // println!("{}", i);
-  }
-  for i in &v {
-    println!("{}", i);
+  let hello = String::from("Hello");
+  // let c = hello[0]; // error 
+  for b in hello.bytes() {
+    println!("{}", b);
   }
 
+  for b in hello.chars() {
+    println!("{}", b);
+  }
+
+  for b in hello.graphemes(true) {
+    println!("{}", b);
+  }
 }

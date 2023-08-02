@@ -125,6 +125,51 @@ fn main() {
 
 ```
 
+## String 
+String is damn complexity when you comes to low-language level.
+
+```Rust
+  let s1 = String::new();
+  let s2 = "initial contents";
+  let s3 = s2.to_string();
+  let s4 = String::from("initial contents");
+
+  let mut s = String::from("foo");
+  s.push_str("bar");
+  s.push('!');
+
+  let s1 = String::from("Hello, ");
+  let s2 = String::from("world!");
+  // let s3 = s1 + &s2; // need borrow s2 to compile succeed
+  /*
+  cannot add `&String` to `&String`
+  string concatenation requires an owned `String` on the leftrust
+  */
+  // println!("{}", s1); // error 
+
+  let s3 = format!("{}{}", s1, s2);
+```
+
+You cant access it like array, because the UTF-8 Width, is dynamic var len 
+
+Ex:  `Hello`` --> 6 length, but `Xin chào đó`, it use 3 bytes to represent 
+
+```Rust
+fn main() {
+  let hello = String::from("Hello");
+  let c = hello[0]; // error 
+}
+
+```
+
+Rust not know which represent you want to use bytes, scalar or clusters 
+
+<img src="./images/represent.png">
+
+
+
+
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
