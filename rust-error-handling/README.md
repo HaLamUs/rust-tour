@@ -1,4 +1,5 @@
-# Rust enum
+
+# Rust Error handling
 
 [⬅ Back](../README.md)
 
@@ -6,106 +7,61 @@
 Video
 
 <div>
-  <a href="https://www.youtube.com/watch?v=DSZqIJhkNCM"><img src="https://img.youtube.com/vi/DSZqIJhkNCM/0.jpg" alt="IMAGE ALT TEXT"></a>
+  <a href="https://www.youtube.com/watch?v=wM6o70NAWUI"><img src="https://img.youtube.com/vi/wM6o70NAWUI/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
 
-## Enum 
-Enum allows enumerate variants
+## Panic
+
+You want crash the program.
 
 ```Rust
-enum IpAddrKind {
-  V4, 
-  V6,
-}
-
+panic!("Crash and burn")
 ```
 
-Store data inside enum
-
-```Rust
-enum IpAddrKind {
-  V4(String), 
-  V6(String),
-}
-
-enum IpAddrKind {
-  V4(u8, u8, u8, u8), 
-  V6(String),
-}
-
-
+```Bash
+RUST_BACKTRACE=1 cargo run
 ```
 
-## Enum vs Struct 
+## Result enum 
+You dont want to crash ur program.
+
 
 ```Rust
-enum Message {
-  Quit,
-  Move { x: i32, y: i32}, // struct 
-  Write(String),
-  ChangeColor(i32, i32, i32),
-}
+use std::fs::File;
+use std::io::{Error, ErrorKind};
+fn main() {
+  let f = File::open("hello.txt");
+  let f = File::open("hello.txt").unwrap();
+  let f = File::open("hello.txt").expect("Failed");
 
-struct QuitMessage; // unit struct 
-struct MoveMessage {
-  x: i32,
-  y: i32,
-}
-struct WriteMessage(String); // tuple struct
-struct ChangeColorMessage(i32, i32, i32); // tuple struct
-
-```
-
-Using struct to define data type we need 4 data type within Enum we can grouped under `Message` type
-
-
-## Implement Enum
-
-```Rust
-impl Message {
-  fn some_log() {
-    println!("Hi Ken!");
-  }
-}
-```
-
-## Option enum 
-
-```Rust
-
-enum Option<T> {
-  Some(T),
-  None, // store no value
-}
-
-```
-
-
-## Matching 
-You actually can skip the `return`
-
-```Rust
-fn value_in_cents(coin: Coin) -> u8 {
-  match coin {
-      Coin::Penny => {
-        println!("Luckt penny!");
-        1 // return 1
+  let f = match f {
+      Ok(file) => file,
+      Err(error) => match error.kind() {
+        ErrorKind::NotFound => match File::create("hello.txt") {
+          Ok(fc) => fc,
+          Err(e) => panic!("Problem creating the file: {:?}", e),
+        },
+        other_error  => {
+          panic!("Problem creating the file: {:?}", other_error);
+        }        
       }
-      Coin::Nickel => 5,
-      Coin::Dime => 10,
-      Coin::Quater => 25,
-  }
-
+  };
+}
 ```
 
-Default case 
+## Error propagation 
+We want child func return ther error back to the caller 
+
+`?` use as optional will auto return Error 
 
 ```Rust
-match x {
-      _ => None,
-      Some(i) => Some(i +1), // need wrap return in Some 
-  }
+fn read_username_from_file2() -> Result<String, Error> {
+  let mut f = File::create("hellp.txt")?;
+  let mut s = String::new();
+  f.read_to_string(&mut s)?;
+  Ok(s)
+}
 ```
 
 
