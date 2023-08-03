@@ -64,6 +64,15 @@ fn read_username_from_file2() -> Result<String, Error> {
 }
 ```
 
+## Best practice 
+
+Use Result enum and error propagation
+
+Use `unWrap` when 100% sure 
+
+## Extend 🆒
+
+We can create a new type just for validate the input value --> Cool 
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
