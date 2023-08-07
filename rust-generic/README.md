@@ -91,6 +91,23 @@ fn main() {
 ```
 
 
+## Generic enum 
+
+```Rust
+
+enum Option<T> {
+  Some(T),
+  None,
+}
+
+enum Result<T, U> {
+  Some(T),
+  Error(U),
+}
+
+```
+
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
