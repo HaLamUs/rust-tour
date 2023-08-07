@@ -144,6 +144,28 @@ fn main() {
 
 ```
 
+# Compile 
+In compile time, Rust will create many enum type as it fits 
+
+```Rust
+enum Option<T> {
+  Some(T),
+  None, 
+}
+
+enum Option_i32 {
+  Some(i32),
+  None, 
+}
+
+enum Option_f64 {
+  Some(f64),
+  None, 
+}
+
+
+```
+
 
 
 
