@@ -74,6 +74,21 @@ fn get_largest<T: PartialOrd + Copy>(list: Vec<T>) -> T {
 }
 ```
 
+## U and T could be a same type 
+
+```Rust
+struct Point<T, U> {
+  x: T,
+  y: U,
+}
+
+fn main() {
+  let p1 = Point{x: 1, y: 1};
+  let p2 = Point{x: 1.0, y: 1.0};
+  let p3 = Point{x: 1, y: 1.0};
+}
+
+```
 
 
 
