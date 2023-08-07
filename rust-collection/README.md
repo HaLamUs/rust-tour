@@ -153,7 +153,7 @@ String is damn complexity when you comes to low-language level.
 
 You cant access it like array, because the UTF-8 Width, is dynamic var len 
 
-Ex:  `Hello`` --> 6 length, but `Xin chào đó`, it use 3 bytes to represent 
+Ex:  `Hello` --> 6 length, but `Xin chào đó`, it use 3 bytes to represent 
 
 ```Rust
 fn main() {
