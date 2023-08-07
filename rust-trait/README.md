@@ -10,7 +10,52 @@ Video
 </div>
 
 
+# Trait 
+In case, you want to share a set of methods that are avaiable different types 
+ 
 
+ ```Rust
+ pub struct NewArticle {
+  pub author: String,
+  pub headline: String,
+  pub content: String
+}
+
+impl Summary for NewArticle {
+  fn summarize(&self) -> String {
+    format!("{}, by {}", self.headline, self.author)
+  }
+}
+
+pub struct Tweet {
+  pub username: String,
+  pub content: String,
+  pub reply: bool,
+  pub retweet: bool,
+}
+
+impl Summary for Tweet {
+    fn summarize(&self) -> String {
+      format!("{}, by {}", self.content, self.username)
+    }
+}
+
+pub trait Summary {
+  fn summarize(&self) -> String;
+}
+
+ ```
+
+ # Default implementation 
+
+ ```Rust
+ pub trait Summary {
+  fn summarize(&self) -> String {
+    String::from("Read more ...")
+  }
+}
+
+ ```
 
 
 
