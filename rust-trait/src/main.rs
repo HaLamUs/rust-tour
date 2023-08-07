@@ -42,6 +42,14 @@ pub trait Summary {
   }
 }
 
+pub fn notify2(item: &impl Summary) {
+  println!("Breaking news! {}", item.summarize());
+}
+
+pub fn notify<T: Summary>(item: &T) {
+  println!("Breaking news! {}", item.summarize());
+}
+
 fn main() {
     let tweet = Tweet {
       username: String::from("@abc"),
@@ -58,4 +66,6 @@ fn main() {
 
     println!("Tweet summary: {}", tweet.summarize());
     println!("Article summary: {}", article.summarize());
+
+    notify(&article);
 }

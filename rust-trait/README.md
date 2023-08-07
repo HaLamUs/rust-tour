@@ -57,6 +57,33 @@ pub trait Summary {
 
  ```
 
+# Trait and generic 
+
+```Rust
+pub fn notify2(item: &impl Summary) {
+  println!("Breaking news! {}", item.summarize());
+}
+
+pub fn notify<T: Summary>(item: &T) {
+  println!("Breaking news! {}", item.summarize());
+}
+
+pub fn notify(item1: &(impl Summary + Display), item2: &impl Summary) {
+  ...
+}
+
+pub fn notify<T: Summary + Display>(item1: &T, item2: &T) { ... }
+
+fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32
+
+fn some_function<T, U>(t: &T, u: &U) -> i32
+  where T: Display + Clone,
+        U: Clone + Debug 
+
+
+
+```
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
