@@ -58,6 +58,10 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 10](./rust-generic/README.md)
 
+### Video #11
+<b> Traits in Rust <b/>
+
+[Video 11](./rust-trait/README.md)
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
