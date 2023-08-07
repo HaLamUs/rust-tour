@@ -1,30 +1,20 @@
 
-struct Point<T> {
+struct Point<T, U> {
   x: T,
-  y: T,
+  y: U,
 }
 
-// just a syntax 
-// impl<T> Point<T>{
-impl<U> Point<U>{
-    fn x(&self) -> &U {
-      &self.x
-    }
-}
-
-impl Point<f64> {
-  fn y(&self) -> &f64 {
-    &self.y
+impl<T, U> Point<T, U>{
+  fn mixup<V, W>(self, other: Point<V, W>) -> Point<T, W> {
+    Point { x: self.x, y: other.y }
   }
-    
 }
+
 
 fn main() {
-  let p1 = Point{x: 1, y: 1};
-  p1.x();
-  p1.y(); // error 
-  let p2 = Point{x: 1.0, y: 1.0};
-  p2.x();
-  p2.y(); // ok 
+  let p1 = Point{x: 1, y: 1.23};
+  let p2 = Point{x: "Hello", y: 'c'};
+  let p3 = p1.mixup(p2);
+  println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
 }
 
