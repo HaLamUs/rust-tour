@@ -1,9 +1,13 @@
 fn main() {
-  let r;
+  let string1 = String::from("abcd");
+  let result;
   {
-    let x = 6;
-    r = &x;
-  } // x ends here so r is invalid pointer - dangling 
+    let string2 = String::from("xyz");
+    result = longest(string1.as_str(), string2.as_str()); // error here 
+  }
+  println!("The longest string is {}", result); 
+}
 
-  println!("r: {}", r);
+fn longest<'a>(x: &'a str, y : & str) -> &'a str {
+  x
 }
