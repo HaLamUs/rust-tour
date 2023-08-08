@@ -9,6 +9,32 @@ Video
   <a href="https://www.youtube.com/watch?v=juIINGuZyBc"><img src="https://img.youtube.com/vi/juIINGuZyBc/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
+# Dangling reference
+It's a reference that points to a invalid data
+Rust uses borrow checker to check dangling ref 
+
+```Rust
+fn main() {
+  let r;
+  {
+    let x = 6;
+    r = &x;
+  } // x ends here so r is invalid pointer - dangling 
+
+  println!("r: {}", r);
+}
+
+
+
+fn main() {
+  let x = 6;
+  let r = &x;
+  println!("r: {}", r);
+}
+
+```
+
+# Generic lifetime annotation 
 
 
 
