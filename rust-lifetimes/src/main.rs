@@ -1,13 +1,20 @@
-fn main() {
-  let string1 = String::from("abcd");
-  let result;
-  {
-    let string2 = String::from("xyz");
-    result = longest(string1.as_str(), string2.as_str()); // error here 
-  }
-  println!("The longest string is {}", result); 
+struct ImportantExcerpt<'a> {
+  part: &'a str,
 }
 
-fn longest<'a>(x: &'a str, y : & str) -> &'a str {
-  x
+impl<'a> ImportantExcerpt<'a> {
+    fn return_part(&self, announcement: &str) -> &str {
+      println!("Attention please: {}", announcement);
+      self.part
+    }
+}
+
+fn main() {
+  let novel = String::from("Call me maybe. 2 hours ago");
+  // first_sentence is the ref to a string slice of the 1st sentence of the novel 
+  let first_sentence = novel.split(',').next().expect("Could not find");
+  let i = ImportantExcerpt {
+    part: first_sentence,
+  };
+  // if first_sentence gone the i too 
 }

@@ -164,6 +164,66 @@ fn longest<'a>(x: & str, y : & str) -> String {
 
 ```
 
+## Struct - generic lifetime annotation 
+
+```Rust
+struct ImportantExcerpt<'a> {
+  part: &'a str,
+}
+
+fn main() {
+  let novel = String::from("Call me maybe. 2 hours ago");
+  // first_sentence is the ref to a string slice of the 1st sentence of the novel 
+  let first_sentence = novel.split(',').next().expect("Could not find");
+  let i = ImportantExcerpt {
+    part: first_sentence,
+  };
+  // if first_sentence gone the i too 
+}
+
+
+```
+
+# Three lifetime illusion rules 
+
+We dont need define GLA the borrow checker still work 
+- Input lifetime: params 
+- Output lifetime: return ref 
+
+1. Each parameter that is a reference gets its own lifetime parameter 
+
+2. If there is exactly one input lifetime parameter, that lifetime is assigned to all output lifetime parameters.
+
+3. If there are multiple input lifetime parameters, but one of them is $self or &mut self the lifetime of self is assigned to all output lifetime parameters 
+
+Rule 1 will generate `<'a>(s: &'a String)`
+
+Rule 2 will generate `&'a str`
+
+Fail 3 rules, you have to define manually 
+
+```Rust
+
+fn first_word<'a>(s: &'a String) -> &'a str {
+
+// dont need 
+
+fn first_word(s: &String) -> &str {
+  let bytes = s.as_bytes();
+
+  for (i, &item) in bytes.iter().enumerate() {
+    if item == b' ' {
+      return &s[..i];
+    }
+  }
+  &s[..]
+}
+
+```
+
+
+
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
