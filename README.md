@@ -63,6 +63,11 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 11](./rust-trait/README.md)
 
+### Video #12
+<b> Rust Lifetimes Finally Explained! <b/>
+
+[Video 12](./rust-lifetimes/README.md)
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
