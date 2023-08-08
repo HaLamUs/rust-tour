@@ -50,6 +50,24 @@ pub fn notify<T: Summary>(item: &T) {
   println!("Breaking news! {}", item.summarize());
 }
 
+fn returns_summarizable(switch: bool) -> impl Summary {
+  if switch {
+    NewArticle {
+      headline: String::from("headline"),
+      author: String::from("author"),
+      content: String::from("content"),
+    }
+  } else {
+    Tweet {
+      username: String::from("username"),
+      content: String::from("content"),
+      reply: false,
+      retweet: false,
+    }
+  }
+}
+
+
 fn main() {
     let tweet = Tweet {
       username: String::from("@abc"),

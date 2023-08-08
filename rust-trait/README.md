@@ -60,30 +60,71 @@ pub trait Summary {
 # Trait and generic 
 
 ```Rust
-pub fn notify2(item: &impl Summary) {
-  println!("Breaking news! {}", item.summarize());
-}
+  pub fn notify2(item: &impl Summary) {
+    println!("Breaking news! {}", item.summarize());
+  }
 
-pub fn notify<T: Summary>(item: &T) {
-  println!("Breaking news! {}", item.summarize());
-}
+  pub fn notify<T: Summary>(item: &T) {
+    println!("Breaking news! {}", item.summarize());
+  }
 
-pub fn notify(item1: &(impl Summary + Display), item2: &impl Summary) {
-  ...
-}
+  pub fn notify(item1: &(impl Summary + Display), item2: &impl Summary) {
+    ...
+  }
 
-pub fn notify<T: Summary + Display>(item1: &T, item2: &T) { ... }
+  pub fn notify<T: Summary + Display>(item1: &T, item2: &T) { ... }
 
-fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32
+  fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32
 
-fn some_function<T, U>(t: &T, u: &U) -> i32
-  where T: Display + Clone,
-        U: Clone + Debug 
-
-
+  fn some_function<T, U>(t: &T, u: &U) -> i32
+    where T: Display + Clone,
+          U: Clone + Debug 
 
 ```
 
+# Examples 
+
+```Rust
+fn returns_summarizable(switch: bool) -> impl Summary {
+  if switch {
+    NewArticle {
+      headline: String::from("headline"),
+      author: String::from("author"),
+      content: String::from("content"),
+    }
+  } else {
+    Tweet {
+      username: String::from("username"),
+      content: String::from("content"),
+      reply: false,
+      retweet: false,
+    }
+  }
+}
+
+
+struct Pair<T> {
+  x: T, 
+  y: T
+}
+
+impl<T> Pair<T> {
+  fn new(x: T, y: T) -> Self {
+    Self {x, y}
+  }
+}
+
+imple<T: Display + PartialOrd> Pair<T> {
+  fn cmp_display(&self) {
+    if self.x >= self.y {
+      println!("The largest member is x = {}", self.x);
+    } else {
+      println!("The largest member is y = {}", self.y);
+    }
+  }
+}
+
+```
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
