@@ -25,6 +25,15 @@ cargo  test
     fn failing_test() {
       panic!("Make this test fail");
     }
+
+  assert_eq
+  asser_ne
+
+  assert!(
+    result.contains("Carol"),
+    "Greeting did not contain name, value was {}", result
+  )
+
 ```
 
 
