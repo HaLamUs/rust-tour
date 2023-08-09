@@ -62,7 +62,8 @@ fn longest(x: &str, y: &str) -> &str {
 
 `string2.as_str()` is string slice 
 
-`-> &str {` it's ambiguous, because x or y have different lifetimes and the fn can be called in many places so many lifetimes 
+`-> &str ` it's ambiguous, because x or y have different lifetimes and the `fn` can be called in many places so many lifetimes
+
 To solve we need to know correct lifetime that is returned --> Generic lifetime 
 
 ## Fix 
@@ -91,7 +92,7 @@ fn longest<'a>(x: &'a str, y : &'a str) -> &'a str {
 
 ```
 
-## Exmaples
+## Examples
 
 ```Rust
 fn main() {
@@ -120,9 +121,9 @@ fn main() {
 
 `fn longest<'a>(x: &'a str, y : &'a str) -> &'a str {`
 
-The relationshop b/w x, y and returned ref is this the lifetime of the returned ref will be the same as smallest lifetime of arguments 
+The relationship b/w x, y and returned ref. The lifetime of the returned ref will be the same as smallest lifetime of arguments 
 
-So if `x` has a smaller lifetime than `y` then the lifetime of returned ref will be the same as x and otherwise 
+So if `x` has a smaller lifetime than `y` then the lifetime of returned ref will be the same as `x` and otherwise 
 
 
 ## Note 
@@ -133,12 +134,12 @@ fn main() {
   let result;
   {
     let string2 = String::from("xyz");
-    result = longest(string1.as_str(), string2.as_str()); // error here 
+    result = longest(string1.as_str(), string2.as_str());  
   }
   println!("The longest string is {}", result); 
 }
 
-fn longest<'a>(x: &'a str, y : & str) -> &'a str {
+fn longest<'a>(x: &'a str, y: & str) -> &'a str {
   x
 }
 
@@ -221,9 +222,15 @@ fn first_word(s: &String) -> &str {
 
 ```
 
+# Static lifetime 
+SL means that the ref could libe as long as as the duration of the program 
 
+```Rust
+fn main() {
+  let s: &'static str = "I have a static lifetime";
+}
 
-
+```
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 

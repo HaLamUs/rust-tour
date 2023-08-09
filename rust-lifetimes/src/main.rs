@@ -1,20 +1,20 @@
-struct ImportantExcerpt<'a> {
-  part: &'a str,
-}
+use std::fmt::Display;
 
-impl<'a> ImportantExcerpt<'a> {
-    fn return_part(&self, announcement: &str) -> &str {
-      println!("Attention please: {}", announcement);
-      self.part
-    }
+fn longest_with_an_announcemeny<'a, T>(
+  x: &'a str,
+  y: &'a str,
+  ann: T,
+) -> &'a str 
+where T: Display,
+{
+  println!("Announcement! {}", ann);
+  if x.len() > y.len() {
+    x
+  } else {
+    y
+  }
 }
 
 fn main() {
-  let novel = String::from("Call me maybe. 2 hours ago");
-  // first_sentence is the ref to a string slice of the 1st sentence of the novel 
-  let first_sentence = novel.split(',').next().expect("Could not find");
-  let i = ImportantExcerpt {
-    part: first_sentence,
-  };
-  // if first_sentence gone the i too 
+  let s: &'static str = "I have a static lifetime";
 }
