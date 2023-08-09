@@ -72,7 +72,12 @@ cargo test test::
 
 #[ignore]
 
+# Unit test 
+UTs are small, focused test, test ONE module in isolation 
+You write test in the same file 
 
+# Integration test 
+ITs are completely external to ur lib 
 
 
 
