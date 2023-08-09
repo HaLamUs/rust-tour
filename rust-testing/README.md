@@ -14,6 +14,19 @@ Rust have bring the value of type system such as borrow checker, make sure we ar
 
 But I cant check the business logic, the intent of our code  
 
+```Bash
+cargo new adder --lib
+cargo  test
+
+```
+
+```Rust
+    #[test]
+    fn failing_test() {
+      panic!("Make this test fail");
+    }
+```
+
 
 
 
