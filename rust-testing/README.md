@@ -68,6 +68,11 @@ cargo test test-1 // we only run test named test-1
 cargo test test::
 
 ```
+# Ignore test 
+
+#[ignore]
+
+
 
 
 
