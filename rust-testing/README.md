@@ -9,6 +9,10 @@ Video
   <a href="https://www.youtube.com/watch?v=18-7NoNPO30"><img src="https://img.youtube.com/vi/18-7NoNPO30/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
+# Testing 
+Rust have bring the value of type system such as borrow checker, make sure we are passing the right type and not mismanaging our memory 
+
+But I cant check the business logic, the intent of our code  
 
 
 
