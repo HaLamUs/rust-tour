@@ -34,9 +34,19 @@ cargo  test
     "Greeting did not contain name, value was {}", result
   )
 
+  #[test]
+  #[should_panic]
+  fn greater_than_100() {
+    Guess::new(200);
+  }
+
 ```
 
+`#[should_panic]` got Green 
 
+`#[should_panic(expected = "Guess value must be less than or equal to 100")]`
+
+we expect substring.
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
