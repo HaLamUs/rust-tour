@@ -59,6 +59,16 @@ cargo test -- --test-threads=1
 
 This will run test binary with extra dash dash 
 
+# Show println
+
+```Bash
+cargo test -- -- show-output
+
+cargo test test-1 // we only run test named test-1
+cargo test test::
+
+```
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
