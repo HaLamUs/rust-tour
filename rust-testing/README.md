@@ -79,6 +79,10 @@ You write test in the same file
 # Integration test 
 ITs are completely external to ur lib 
 
+Integration tests will be in folder `test`
+
+# Share code 
+If you want to share common code b/w ITs, you need to create `common` folder
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
