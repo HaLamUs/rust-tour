@@ -53,6 +53,23 @@ Problem: `parse_config` is very closely tied to `Config` type. We want decouple 
 
 Solve: We the public fn into `Config` struct
 
+### Return result type 
+
+```Rust
+impl Config {
+  fn new(args: &[String]) -> Result<Config, &str> {
+    if args.len() < 3 {
+      return Err("not enough arguments");
+    }
+    let query = args[1].clone();
+    let filename = args[2].clone();
+    Ok(Config { query, filename })
+  }    
+}
+
+```
+
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
