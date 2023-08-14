@@ -1,4 +1,4 @@
-# First CLI
+# Mini grep
 
 [⬅ Back](../README.md)
 
@@ -15,6 +15,16 @@ Video 2
   <a href="https://www.youtube.com/watch?v=-L4nKAlmH3M"><img src="https://img.youtube.com/vi/-L4nKAlmH3M/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
+# Program 
+We implement mini `grep`
+
+```Rust
+let args: Vec<String> = env::args().collect();
+```
+
+This will convert list of passing args to collection of String.
+
+We need to define type `Vec<String>` because collection requires a type
 
 
 
