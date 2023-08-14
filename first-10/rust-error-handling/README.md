@@ -1,7 +1,7 @@
 
 # Rust Error handling
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video
