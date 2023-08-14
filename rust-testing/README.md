@@ -3,11 +3,18 @@
 [⬅ Back](../README.md)
 
 ## Intro 
-Video
+Video 1
 
 <div>
   <a href="https://www.youtube.com/watch?v=18-7NoNPO30"><img src="https://img.youtube.com/vi/18-7NoNPO30/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
+
+Video 1
+
+<div>
+  <a href="https://www.youtube.com/watch?v=-L4nKAlmH3M"><img src="https://img.youtube.com/vi/-L4nKAlmH3M/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
+
 
 # Testing 
 Rust have bring the value of type system such as borrow checker, make sure we are passing the right type and not mismanaging our memory 
@@ -21,10 +28,10 @@ cargo  test
 ```
 
 ```Rust
-    #[test]
-    fn failing_test() {
-      panic!("Make this test fail");
-    }
+  #[test]
+  fn failing_test() {
+    panic!("Make this test fail");
+  }
 
   assert_eq
   asser_ne
