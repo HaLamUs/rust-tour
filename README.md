@@ -36,7 +36,7 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 ### Video #6
 <b> Enums and Pattern Matching in Rust <b/>
 
-[Video 6](./rust-enum/README.md)
+[Video 6](./first-10/rust-enum/README.md)
 
 ### Video #7
 <b> Rust's Module System Explained! <b/>
