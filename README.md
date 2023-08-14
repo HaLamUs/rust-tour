@@ -46,7 +46,7 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 ### Video #8
 <b> Common Collections in Rust <b/>
 
-[Video 8](./rust-collection/README.md)
+[Video 8](./first-10/rust-collection/README.md)
 
 ### Video #9
 <b> Error Handling in Rust <b/>
