@@ -9,7 +9,7 @@ Video 1
   <a href="https://www.youtube.com/watch?v=18-7NoNPO30"><img src="https://img.youtube.com/vi/18-7NoNPO30/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
-Video 1
+Video 2
 
 <div>
   <a href="https://www.youtube.com/watch?v=-L4nKAlmH3M"><img src="https://img.youtube.com/vi/-L4nKAlmH3M/0.jpg" alt="IMAGE ALT TEXT"></a>

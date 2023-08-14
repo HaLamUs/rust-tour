@@ -68,11 +68,16 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 12](./rust-lifetimes/README.md)
 
-### Video #13
-<b> Testing in Rust <b/>
+### Video #13-14
+<b> Testing in Rust P1 + P2 <b/>
 
-[Video 13](./rust-testing/README.md)
+[Video 13 - 14](./rust-testing/README.md)
 
+
+### Video #15-16
+<b> Writing a CLI App in Rust! - Part 1 + 2 <b/>
+
+[Video 15-16](./simple-cli/README.md)
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
