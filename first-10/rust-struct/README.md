@@ -1,6 +1,6 @@
 # Rust struct
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video
