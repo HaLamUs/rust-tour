@@ -15,7 +15,7 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 ### Video #2
 <b> Programming a Guessing Game in Rust! <b/>
 
-[Video 2](./guessing-game/README.md)
+[Video 2](./first-10/guessing-game/README.md)
 
 ### Video #3
 <b> Common Programming Concepts in Rust <b/>
