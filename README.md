@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 ### Video #1
 <b> ULTIMATE Rust Lang Tutorial! - Getting Started <b/>
 
-[Video 1](./getting-started/README.md)
+[Video 1](./first-10/getting-started/README.md)
 
 
 ### Video #2
