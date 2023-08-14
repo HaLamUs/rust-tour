@@ -56,7 +56,7 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 ### Video #10
 <b> Generic Types in Rust <b/>
 
-[Video 10](./rust-generic/README.md)
+[Video 10](./first-10/rust-generic/README.md)
 
 ### Video #11
 <b> Traits in Rust <b/>
