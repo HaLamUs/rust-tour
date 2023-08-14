@@ -41,7 +41,7 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 ### Video #7
 <b> Rust's Module System Explained! <b/>
 
-[Video 7](./rust-module/README.md)
+[Video 7](./first-10/rust-module/README.md)
 
 ### Video #8
 <b> Common Collections in Rust <b/>
