@@ -51,7 +51,7 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 ### Video #9
 <b> Error Handling in Rust <b/>
 
-[Video 9](./rust-error-handling/README.md)
+[Video 9](./first-10/rust-error-handling/README.md)
 
 ### Video #10
 <b> Generic Types in Rust <b/>
