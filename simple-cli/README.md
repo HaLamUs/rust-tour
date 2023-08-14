@@ -49,6 +49,10 @@ fn parse_config(args: &[String]) -> Config {
 
 Use `clone()` we don't want to take the ownership 
 
+Problem: `parse_config` is very closely tied to `Config` type. We want decouple this.
+
+Solve: We the public fn into `Config` struct
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
