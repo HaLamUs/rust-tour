@@ -122,6 +122,27 @@ The return value need lifetime same as `content` because the result in the `cont
 pub fn search<'a>(query: &str, content: &'a str) -> Vec<&'a str> {
 ```
 
+Assign var for both if and else 
+
+```Rust
+let results = if config.case_sensitive {
+    search(&config.query, &contents)
+  } else {
+    search_case_insensitive(&config.query, &contents)
+  };
+```
+
+`let case_sensitive = env::var("CASE_INSENSITIVE").is_err();`
+
+`is_err()` will return false if there is an error 
+
+## Set env 
+
+```Bash
+export CASE_INSENSITIVE=true
+unset CASE_INSENSITIVE
+```
+
 
 
 
