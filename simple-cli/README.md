@@ -86,6 +86,42 @@ Import `lib.rs` using `use simple_cli::Config;`
 
 Where `simple_cli` is the folder's project 
 
+## Test driven 
+
+We write our test first. then red --> green --> refactor --> loop again
+
+`&str` string slice
+
+```Rust
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+  #[test]
+  fn one_result() {
+    let query = "duct";
+    let content = "\
+    Rust:
+    safe, fast, productive.
+    Pick three.";
+
+    assert_eq!(vec!["safe, fast, productive."], search(query, content));
+  }
+
+}
+
+```
+
+<h1>REMEMBER <h1>
+Everytime we return a ref from the function we have to tie the lifetime of that ref to the lifetime of one of input vars 
+
+
+The return value need lifetime same as `content` because the result in the `content`
+
+```Rust
+pub fn search<'a>(query: &str, content: &'a str) -> Vec<&'a str> {
+```
+
 
 
 
