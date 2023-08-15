@@ -28,7 +28,7 @@ We need to define type `Vec<String>` because collection requires a type
 
 ## Refactor 
 - Ideally a fn should have one responsibility 
-- query and filename need connect in some ways ⁉️
+- query and filename need connect in some ways ❓
 - Centrelize place to handle errors 
 
 If the main function gets too large same the binary crate  
@@ -36,7 +36,7 @@ If the main function gets too large same the binary crate
 Fix: Split the lib, then the binary crate will call fns in lib 
 
 
-### Struct can store a ref 
+### Struct can store a ref var 
 But we have to take care the lifetime 
 
 ```Rust
@@ -68,6 +68,14 @@ impl Config {
 }
 
 ```
+
+## question mark 
+
+```Rust
+let contents = fs::read_to_string(config.filename)?;
+```
+
+Add question mark at the end if `read_to_string` returns an error type that error type will automatically be returned   
 
 
 
