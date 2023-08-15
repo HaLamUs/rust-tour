@@ -27,10 +27,22 @@ impl Config {
   }    
 }
 
-pub fn search<'a>(query: &str, content: &'a str) -> Vec<&'a str> {
+pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
   let mut results = Vec::new();
-  for line in content.lines() {
+  for line in contents.lines() {
     if line.contains(query) {
+      results.push(line)
+    }
+  }
+  results
+}
+
+pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+  let query = query.to_lowercase();
+  let mut results = Vec::new();
+
+  for line in contents.lines() {
+    if line.to_lowercase().contains(&query) {
       results.push(line)
     }
   }
@@ -42,14 +54,26 @@ mod tests {
   use super::*;
 
   #[test]
-  fn one_result() {
+  fn case_sensitive() {
     let query = "duct";
     let content = "\
 Rust:
 safe, fast, productive.
-Pick three.";
+Pick three.
+Duct tape.";
 
     assert_eq!(vec!["safe, fast, productive."], search(query, content));
+  }
+
+  #[test]
+  fn case_insensitive() {
+    let query = "rUsT";
+    let content = "\
+Rust:
+safe, fast, productive.
+Trust me.";
+
+    assert_eq!(vec!["Rust:", "Trust me."], search_case_insensitive(query, content));
   }
 
 }
