@@ -12,7 +12,7 @@ Video 1
 Video 2
 
 <div>
-  <a href="https://www.youtube.com/watch?v=-L4nKAlmH3M"><img src="https://img.youtube.com/vi/-L4nKAlmH3M/0.jpg" alt="IMAGE ALT TEXT"></a>
+  <a href="https://www.youtube.com/watch?v=AABHxixn6Cw"><img src="https://img.youtube.com/vi/AABHxixn6Cw/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
 ## Program 
@@ -76,6 +76,16 @@ let contents = fs::read_to_string(config.filename)?;
 ```
 
 Add question mark at the end if `read_to_string` returns an error type that error type will automatically be returned   
+
+
+## lib.rs 
+
+Move struct `Config` and `run` fn to lib.rs using `pub` keyword to make these available.
+
+Import `lib.rs` using `use simple_cli::Config;`
+
+Where `simple_cli` is the folder's project 
+
 
 
 
