@@ -143,6 +143,11 @@ export CASE_INSENSITIVE=true
 unset CASE_INSENSITIVE
 ```
 
+## Output to file 
+
+```Bash
+cargo run > output.txt 
+```
 
 
 
