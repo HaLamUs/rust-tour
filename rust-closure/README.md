@@ -118,6 +118,21 @@ let n = example_closure(5); // <-- error's here: missmatched type
 
 Because, first type (string) passed intro the closure will be concrete type of input parameter's closure 
 
+## Scope of closure 
+
+```Rust
+fn main() {
+  let x = 4;
+  let equal_to_x = |z| z == x;
+
+  fn equal_to_x(z) -> bool{
+    z == x // can not access x
+  }
+
+  let y = 4;
+  assert!(equal_to_x(y));
+}
+```
 
 
 

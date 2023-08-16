@@ -9,10 +9,15 @@ fn simulated_expensive_calculation(intensity: u32) -> u32 {
 
 
 fn main() {
-  let simulated_intensity = 10;
-  let simulated_random_number = 7;
+  let x = 4;
+  let equal_to_x = |z| z == x;
 
-  generate_workout(simulated_intensity, simulated_random_number);
+  fn equal_to_x(z) -> bool{
+    z == x // can not access x
+  }
+
+  let y = 4;
+  assert!(equal_to_x(y));
 }
 
 struct Cacher<T> where T: Fn(u32) -> u32, {
