@@ -27,6 +27,12 @@ pub trait Iterator {
 }
 ```
 
+Iterator trait provides some default method 
+
+```Rust
+let total: i32 = v1_iter.sum(); // total needs exciplit type
+```
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
