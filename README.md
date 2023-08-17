@@ -79,13 +79,23 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 15-16](./simple-cli/README.md)
 
-<p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
 ### Video #17
 <b> Closures in Rust <b/>
 
 [Video 17](./rust-closure/README.md)
 
+
+### Video #18
+<b> Closures in Rust <b/>
+
+[Video 18](./rust-iterators/README.md)
+
+
+
+
+
+<p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
 ## Author
 
