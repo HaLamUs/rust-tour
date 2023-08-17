@@ -40,6 +40,20 @@ Map which takes in a closure and create an iterator which calls the closure over
 let v2: Vec<_> = v1.iter().map(|x| x + 1).collect();
 ```
 
+## Example
+
+```Rust
+#[derive(PartialEq, Debug)]
+struct Shoe {
+  size: u32,
+  style: String,
+}
+
+fn shoes_in_my_size(shoes: Vec<Shoe>, shoe_size: u32) -> Vec<Shoe> {
+  shoes.into_iter().filter(|s| s.size == shoe_size).collect()
+}
+```
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
