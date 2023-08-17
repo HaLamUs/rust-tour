@@ -134,6 +134,30 @@ fn main() {
 }
 ```
 
+Closure capture value in 3 ways
+1. Taking ownership
+2. Borrowing mutably
+3. Borrowing immutably 
+
+According to 3 traits 
+
+`FnOnce, FnMut, Fn`
+
+1. FnOnce takes ownership of var inside closure. Closure cant take ownership of SAME var more than once  
+2. FnMut borrows value 
+3. Fn borrow value immutably 
+
+Why we want take the ownership of var?
+
+Usecase pass closure from one thread to another, same as var passing ownership
+
+Take ownership by `move` keyword
+
+```Rust
+let equal_to_x = move |z| z == x;
+println!("Cant use x here {:?}", x); // error 
+
+```
 
 
 

@@ -9,17 +9,14 @@ fn simulated_expensive_calculation(intensity: u32) -> u32 {
 
 
 fn main() {
-  let x = 4;
-  let equal_to_x = |z| z == x;
+  let x = vec![1, 2, 3];
+  let equal_to_x = move |z| z == x;
+  println!("Cant use x here {:?}", x);
+  let y = vec![1, 2, 3];
 
-  fn equal_to_x(z) -> bool{
-    z == x // can not access x
-  }
-
-  let y = 4;
   assert!(equal_to_x(y));
-}
 
+}
 struct Cacher<T> where T: Fn(u32) -> u32, {
   calculation: T, 
   value: Option<u32>,
