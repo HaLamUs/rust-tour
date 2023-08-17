@@ -3,14 +3,29 @@
 [⬅ Back](../README.md)
 
 ## Intro 
-Video 1
+Video 
 
 <div>
   <a href="https://www.youtube.com/watch?v=4GcKrj4By8k"><img src="https://img.youtube.com/vi/4GcKrj4By8k/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
+## Iterator pattern
+Iterate over a sequence of elements regardless how elements are stored (Ex: array, custom data ...)
+Iterator encapsulates the logic for iterating over different data structures in a uniform way 
 
+```Rust
+let v1_iter = v1.iter(); // this is lazy 
+```
 
+By implement iterator trait. Any data structure can iterate
+
+```Rust
+pub trait Iterator {
+  type Item;
+
+  fn next(&mut self) -> Option<Self::Item>;
+}
+```
 
 
 
