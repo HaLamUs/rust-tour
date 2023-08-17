@@ -33,6 +33,13 @@ Iterator trait provides some default method
 let total: i32 = v1_iter.sum(); // total needs exciplit type
 ```
 
+## Map 
+Map which takes in a closure and create an iterator which calls the closure over each element in the sequence 
+
+```Rust
+let v2: Vec<_> = v1.iter().map(|x| x + 1).collect();
+```
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
