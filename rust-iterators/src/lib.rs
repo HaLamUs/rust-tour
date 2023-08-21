@@ -25,16 +25,22 @@ pub struct Config {
 }
 
 impl Config {
-  pub fn new(args: env::Args) -> Result<Config, &'static str> {
-    if args.len() < 3 {
-      return Err("not enough arguments");
+  pub fn new(mut args: &[String]) -> Result<Config, &`static str> {
+    args.next();// this is a path to our cli
+
+    let query = match args.next() {
+      Some(arg) => arg,
+      None => return Err("Didnt get a query string"),
     }
     
-    let query = args[1].clone();
-    let filename = args[2].clone();
+    let filename = match args.next() {
+      Some(arg) => arg, // it return a string then query (outside) take the ownership
+      None => return Err("Didnt get a file name"),
+    }
 
     let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
 
+    // config take the ownership of string 
     Ok(Config { query, filename, case_sensitive })
   }    
 }

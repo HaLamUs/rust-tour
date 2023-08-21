@@ -3,10 +3,16 @@
 [⬅ Back](../README.md)
 
 ## Intro 
-Video 
+Video 1
 
 <div>
   <a href="https://www.youtube.com/watch?v=4GcKrj4By8k"><img src="https://img.youtube.com/vi/4GcKrj4By8k/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
+
+Video 2
+
+<div>
+  <a href="https://www.youtube.com/watch?v=rb63xJEjaZU"><img src="https://img.youtube.com/vi/rb63xJEjaZU/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
 ## Iterator pattern
@@ -125,6 +131,35 @@ impl Config {
 }
 
 ```
+
+## Solution
+
+```Rust
+impl Config {
+  pub fn new(mut args: &[String]) -> Result<Config, &`static str> {
+    args.next();// this is a path to our cli
+
+    let query = match args.next() {
+      Some(arg) => arg,
+      None => return Err("Didnt get a query string"),
+    }
+    
+    let filename = match args.next() {
+      Some(arg) => arg, // it return a string then query (outside) take the ownership
+      None => return Err("Didnt get a file name"),
+    }
+
+    let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
+
+    // config take the ownership of string 
+    Ok(Config { query, filename, case_sensitive })
+  }    
+}
+
+
+```
+
+`Result<Config, &'static str> ` uses static because Args is a custom type and string slice we yield error string `Didnt get a query string` is last long as the program does 
 
 
 
