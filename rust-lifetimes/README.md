@@ -223,7 +223,7 @@ fn first_word(s: &String) -> &str {
 ```
 
 # Static lifetime 
-SL means that the ref could libe as long as as the duration of the program 
+SL means that the ref could live as long as as the duration of the program 
 
 ```Rust
 fn main() {

@@ -96,12 +96,35 @@ fn using_other_iterator_trait_methods() {
 
 ```
 
+🟡 Return 'None' break the loop 🤔
+
 zip method will take 2 iterators and zip them up into one iterator containing pairs of value
 
 skip will create an iterator that skips the first n elements 
 
 map takes a closure which it will call for each item in the iterator in this case each item has a pair of values because we just call the zip method 
 
+
+## Problem 
+
+```Rust
+
+impl Config {
+  pub fn new(args: &[String]) -> Result<Config, &str> {
+    if args.len() < 3 {
+      return Err("not enough arguments");
+    }
+    
+    let query = args[1].clone(); //Clone is  Not efficient
+    let filename = args[2].clone(); //Clone is  Not efficient
+
+    let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
+
+    Ok(Config { query, filename, case_sensitive })
+  }    
+}
+
+```
 
 
 
