@@ -9,8 +9,38 @@ Video
   <a href="https://www.youtube.com/watch?v=4TI153PIEDQ"><img src="https://img.youtube.com/vi/4TI153PIEDQ/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
+## Crate 
+A crate is a compilation unit in Rust. Whenever rustc some_file.rs is called, some_file.rs is treated as the crate file
 
+Upload your own code to crates.io 
 
+## Profile 
+
+```bash
+// dev 
+cargo build
+```
+
+```bash
+// release
+cargo build --release
+```
+
+### Cargo.toml
+
+```bash
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
+```
+
+The trade-off 
+
+For dev, We will have a fast compile time a slower run time 
+
+Release mode, slower compile time for a faster runtime 
 
 
 
