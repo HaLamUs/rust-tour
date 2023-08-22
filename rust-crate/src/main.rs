@@ -1,5 +1,5 @@
-use art::PrimaryColor;
-use art::mix;
+use rust_crate::PrimaryColor;
+use rust_crate::mix;
 
 fn main() {
   let red = PrimaryColor::Red;

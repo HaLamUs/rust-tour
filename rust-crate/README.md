@@ -127,7 +127,12 @@ pub mod kinds {
 ```
 
 
-`//! # Art ` defines the module name `Art`
+🔴 The module name is in `Cargo.toml` where 
+
+```
+[package]
+name = "rust-crate"
+```
 
 With this define users have to jump to each modules (`kinds, utils`) to understand what are going on.
 
@@ -167,8 +172,32 @@ use art::mix;
 
 ![alt text](./imgs/doc3.png)
 
+## crate.io
 
+https://crates.io/
 
+```bash
+cargo login secret_key
+cargo publish
+```
+
+Check `cargo.toml` makes sure the name is unique and below
+
+```bash
+description = "A hello world library"
+license = "MIT"
+
+```
+
+## update
+
+Change version 
+
+```bash
+version = "1.0.0"
+
+cargo publish
+```
 
 
 
