@@ -43,6 +43,22 @@ For dev, We will have a fast compile time a slower run time
 Release mode, slower compile time for a faster runtime 
 
 
+## Documentation comments 
+
+Normal starts with 2 slashes 
+
+While DC starts with 3 slashes 
+
+### Create documentation html
+
+```bash
+cargo doc --open
+```
+
+![alt text](./imgs/doc.png)
+
+Rust runs test in documentation comment
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
