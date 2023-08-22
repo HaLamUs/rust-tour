@@ -101,6 +101,76 @@ pub fn add_one(x: i32) -> i32 {
 
 ```
 
+## Module 
+
+```Rust
+//! # Art 
+//!
+//! A library for modeling artistic concepts
+
+pub mod kinds {
+  /// The primary colors according to the RYB color model
+  pub enum PrimaryColor {
+    Red,
+    Yellow,
+    Blue,
+  }
+
+  /// The secondary colors according to the RYB color model
+
+  pub enum SecondaryColor {
+    Orange,
+    Green,
+    Purple,
+  }
+}
+```
+
+
+`//! # Art ` defines the module name `Art`
+
+With this define users have to jump to each modules (`kinds, utils`) to understand what are going on.
+
+![alt text](./imgs/doc2.png)
+
+### Fix 
+
+Define on top of it
+
+```Rust
+pub use self::kinds::PrimaryColor;
+pub use self::kinds::SecondaryColor;
+pub use self::utils::mix;
+
+pub mod kinds {
+  /// The primary colors according to the RYB color model
+  pub enum PrimaryColor {
+    Red,
+    Yellow,
+    Blue,
+  }
+```
+
+```Rust
+// main.rs
+// Before
+
+use art::kinds::PrimaryColor;
+use art::utils::mix;
+
+// after 
+
+use art::PrimaryColor;
+use art::mix;
+
+```
+
+![alt text](./imgs/doc3.png)
+
+
+
+
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
