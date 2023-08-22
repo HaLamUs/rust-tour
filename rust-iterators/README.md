@@ -3,10 +3,16 @@
 [⬅ Back](../README.md)
 
 ## Intro 
-Video 
+Video 1
 
 <div>
   <a href="https://www.youtube.com/watch?v=4GcKrj4By8k"><img src="https://img.youtube.com/vi/4GcKrj4By8k/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
+
+Video 2
+
+<div>
+  <a href="https://www.youtube.com/watch?v=rb63xJEjaZU"><img src="https://img.youtube.com/vi/rb63xJEjaZU/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
 ## Iterator pattern
@@ -96,6 +102,8 @@ fn using_other_iterator_trait_methods() {
 
 ```
 
+🟡 Return 'None' break the loop 🤔
+
 zip method will take 2 iterators and zip them up into one iterator containing pairs of value
 
 skip will create an iterator that skips the first n elements 
@@ -103,6 +111,60 @@ skip will create an iterator that skips the first n elements
 map takes a closure which it will call for each item in the iterator in this case each item has a pair of values because we just call the zip method 
 
 
+## Problem 
+
+```Rust
+
+impl Config {
+  pub fn new(args: &[String]) -> Result<Config, &str> {
+    if args.len() < 3 {
+      return Err("not enough arguments");
+    }
+    
+    let query = args[1].clone(); //Clone is  Not efficient
+    let filename = args[2].clone(); //Clone is  Not efficient
+
+    let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
+
+    Ok(Config { query, filename, case_sensitive })
+  }    
+}
+
+```
+
+## Solution
+
+```Rust
+impl Config {
+  pub fn new(mut args: env::Args) -> Result<Config, &'static str> {
+    args.next();// this is a path to our cli
+
+    let query = match args.next() {
+      Some(arg) => arg,
+      None => return Err("Didnt get a query string"),
+    }
+    
+    let filename = match args.next() {
+      Some(arg) => arg, // it return a string then query (outside) take the ownership
+      None => return Err("Didnt get a file name"),
+    }
+
+    let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
+
+    // config take the ownership of string 
+    Ok(Config { query, filename, case_sensitive })
+  }    
+}
+
+
+```
+
+`pub fn new(mut args: env::Args)` need `mut` coz iterate 
+
+`Result<Config, &'static str> ` uses static because Args is a custom type and string slice we yield error string `Didnt get a query string` is last long as the program does 
+
+## Conclusion 
+Using loops or using iterators has the same performance - same speed 
 
 
 
