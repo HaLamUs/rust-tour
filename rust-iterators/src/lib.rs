@@ -25,18 +25,18 @@ pub struct Config {
 }
 
 impl Config {
-  pub fn new(mut args: &[String]) -> Result<Config, &`static str> {
+  pub fn new(mut args: env::Args) -> Result<Config, &'static str> {
     args.next();// this is a path to our cli
 
     let query = match args.next() {
       Some(arg) => arg,
       None => return Err("Didnt get a query string"),
-    }
+    };
     
     let filename = match args.next() {
       Some(arg) => arg, // it return a string then query (outside) take the ownership
       None => return Err("Didnt get a file name"),
-    }
+    };
 
     let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
 
@@ -46,13 +46,10 @@ impl Config {
 }
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-  let mut results = Vec::new();
-  for line in contents.lines() {
-    if line.contains(query) {
-      results.push(line)
-    }
-  }
-  results
+  contents
+    .lines()
+    .filter(|line | line.contains(query))
+    .collect()
 }
 
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {

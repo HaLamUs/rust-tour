@@ -136,7 +136,7 @@ impl Config {
 
 ```Rust
 impl Config {
-  pub fn new(mut args: &[String]) -> Result<Config, &`static str> {
+  pub fn new(mut args: env::Args) -> Result<Config, &'static str> {
     args.next();// this is a path to our cli
 
     let query = match args.next() {
@@ -159,8 +159,12 @@ impl Config {
 
 ```
 
+`pub fn new(mut args: env::Args)` need `mut` coz iterate 
+
 `Result<Config, &'static str> ` uses static because Args is a custom type and string slice we yield error string `Didnt get a query string` is last long as the program does 
 
+## Conclusion 
+Using loops or using iterators has the same performance - same speed 
 
 
 
