@@ -59,6 +59,48 @@ cargo doc --open
 
 Rust runs test in documentation comment
 
+```rust
+/// Adds one to the number given.
+///
+/// # Examples
+///
+/// ```
+/// let arg = 5;
+/// let answer = rust_crate::add_one(arg);
+///
+/// assert_eq!(6, answer);
+///```
+
+pub fn add_one(x: i32) -> i32 {
+  x + 1
+}
+```
+
+## Other DC style
+
+```Rust
+//! # Rust crate
+//!
+//! `rust crate` is a collection of utilities to make performing certain
+//! calculations more convenient.
+
+/// Adds one to the number given.
+///
+/// #Example
+///
+///```
+/// let arg = 5;
+/// let answer = rust_crate::add_one(arg);
+///
+/// assert_eq!(6, answer);
+///```
+
+pub fn add_one(x: i32) -> i32 {
+  x + 1
+}
+
+```
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
