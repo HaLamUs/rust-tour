@@ -20,6 +20,43 @@ Workspaces help you manage mul related packages that are developed in tandem.
 
 Packages in a workspace share common dependency, share one output directory 
 
+## Scenario
+One binary that depends on two libs 
+
+## Structure 
+- `add-one` is a library that has `fun add_one`
+
+- `adder` is a binary that uses `fun add_one`
+
+
+1. Add workspace by define Cargo.toml 
+
+2. Create binary adder 
+  ``` bash
+  cargo new adder
+  cargo build 
+  ```
+
+3. Create lib add-one
+  ```bash
+  cargo new add-one --lib
+  ```
+
+4. Add dependency `adder` - Cargo.toml
+
+```
+[dependencies]
+add-one = { path = "../add-one" }
+```
+
+build `adder` and run 
+
+```bash
+cargo build
+
+cargo run -p adder // p: package
+
+```
 
 
 
