@@ -9,7 +9,17 @@ Video
   <a href="https://www.youtube.com/watch?v=70_9IIsQfjs"><img src="https://img.youtube.com/vi/70_9IIsQfjs/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
-## Crate 
+## Cargo workspace
+Simple CLI program that had a binary crate and a library crate 
+### Problem 
+Project growing we have mul lib crates 
+
+Cargo workspace helps you organize your project workspace.
+
+Workspaces help you manage mul related packages that are developed in tandem.
+
+Packages in a workspace share common dependency, share one output directory 
+
 
 
 
