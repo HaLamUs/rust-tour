@@ -58,6 +58,14 @@ cargo run -p adder // p: package
 
 ```
 
+## External dependencies 
+
+`adder` or `add-one` called packages 
+
+They both have `Cargo.toml` which uses to define external dependencies. BUT none of it has `Cargo.lock`. This file will manage our ED, usieng the same version of all dependencies
+
+
+Both `adder` and `add-one` uses `rand` BUT only one version of `rand` was used
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
