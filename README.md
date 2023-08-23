@@ -86,12 +86,16 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 [Video 17](./rust-closure/README.md)
 
 
-### Video #18
+### Video #18-19
 <b> Closures in Rust <b/>
 
-[Video 18](./rust-iterators/README.md)
+[Video 18-19](./rust-iterators/README.md)
 
 
+### Video #20
+<b> Publishing a Rust Crate! <b/>
+
+[Video 20](./rust-crate/README.md)
 
 
 
