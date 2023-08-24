@@ -10,6 +10,23 @@ Video
 </div>
 
 ## Pointer 
+Pointer is a variable that stores a memory address and that memory address refers to or points to some other data in memory 
+
+Reference is the most common pointer in Rust.
+
+Reference simply borrow the values they point to which means they don't have ownership over the value 
+
+## Smart pointer 
+SP has more capabilities, SPs are data structures that act like a pointer but have metadata and extra capabilities 
+
+They have reference counting which keeps tracking the number of owners and cleaning up when there is no owners. Sometime it owns the data NOT just borrow. 
+
+Example: String, Vector 
+
+They own data and allow you to manipulate it. They store extra metadata such as capacity and extra capabilities for example `String` ensures that the data is valid utf-8 
+
+In detail, SP is implemented by struct and traits 
+
 
 
 
