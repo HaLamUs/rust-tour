@@ -67,6 +67,12 @@ They both have `Cargo.toml` which uses to define external dependencies. BUT none
 
 Both `adder` and `add-one` uses `rand` BUT only one version of `rand` was used
 
+## Run test 
+
+```bash
+cargo test -p add-one
+```
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
