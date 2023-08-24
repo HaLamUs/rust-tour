@@ -56,6 +56,33 @@ Unknow size it's maybe large or smalle, so stored in heap
 🟡 Stack is accessed faster than heap but it is limited 
 
 
+## Recursive enum 
+
+```Rust
+enum List {
+  Cons(i32, List),
+  Nil,
+}
+
+```
+
+Rust cant know how much space this type takes up at compile time.
+
+Extra: `Cons` is a list 
+https://en.wikipedia.org/wiki/Cons
+
+![alt text](./imgs/doc.png)
+
+Because the Cons is infinite size. Instead of storing the list directly we should store a pointer to the list value 
+
+
+Check the syntax
+```bash
+cargo check 
+```
+
+
+
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
 ## Author
