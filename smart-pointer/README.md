@@ -28,7 +28,32 @@ They own data and allow you to manipulate it. They store extra metadata such as 
 In detail, SP is implemented by struct and traits 
 
 
+## Box 
+Box is SP that allows you allocate values on heap 
 
+```Rust
+fn main() {
+  let b = Box::new(5);
+  println("b = {}", b);
+}
+```
+
+`Box::new(5);` we use `new` fn to store `5` on the heap and on the stack we are storing a pointer or a memory address to the location of `5` 
+
+`println("b = {}", b);` defaults will be print the value that `b` is pointing
+
+Box pointer's Use cases: 
+
+1. a Large amount of data, we dont want to copy it, we just need to transfer the data ownership. 
+Large so stored in heap
+
+2. a type whose exact size CANT be known at compile time but we want to the value of that type 
+
+
+Unknow size it's maybe large or smalle, so stored in heap 
+
+
+🟡 Stack is accessed faster than heap but it is limited 
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
