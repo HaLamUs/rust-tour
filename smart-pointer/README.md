@@ -81,6 +81,31 @@ Check the syntax
 cargo check 
 ```
 
+## Calculate size 
+
+```Rust
+enum Message {
+  Quit,
+  Move {x: i32, y: i32},
+  Write(String),
+  ChangeColor(i32, i32, i32),
+}
+
+```
+
+enum can only use one variant at a time.
+So it will take the most space of largest variant 
+
+Rust can calcualte the size of known type and pointer ofc 
+
+This can calculate. Pointer is fixed size 
+
+```Rust
+enum List {
+  Cons(i32, Box<List>),
+  Nil,
+}
+```
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
