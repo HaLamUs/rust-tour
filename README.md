@@ -100,7 +100,7 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 
 ### Video #18-19
-<b> Closures in Rust <b/>
+<b> Iterators in Rust <b/>
 
 [Video 18-19](./rust-iterators/README.md)
 
