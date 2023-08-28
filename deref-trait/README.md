@@ -23,10 +23,44 @@ Deref trait allows you to customize the behavior dereference operator `*`
 
 🔴 `2` y is pointing to a copy of `5` because primitives type (integer) get passed to a function the value is copied instead of ownership being transfer 
 
+```Rust
+  let y = Box::new(x);
+  assert_eq!(5, *y); // no error 
+```
 
 ### Explain 
 
 Box is SP that implement deref trait which allows dereference operator to work the same as if it were a reference. 😲
+
+## Tuple struct 
+
+```Rust
+struct MyBox<T>(T);
+
+```
+
+Using Tuple Structs Without Named Fields to Create Different Types
+
+https://doc.rust-lang.org/book/ch05-01-defining-structs.html
+
+```Rust
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+fn main() {
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+}
+```
+
+
+### Problem 
+
+
+```Rust
+  let y = MyBox::new(x);
+  assert_eq!(5, *y); // ERROR: MyBox cant be dereferenced 
+```
 
 
 
