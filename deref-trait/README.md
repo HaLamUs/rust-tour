@@ -88,6 +88,41 @@ The actual code
 assert_eq!(5, *(y.deref()));
 ```
 
+## Implicit deref coercion 
+// cast ngầm 
+
+https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/deref-coercions.html
+
+It's just a convenience feature that Rust that automatically for type that implement the `deref`. Deref coercion will convert a reference of one type to a reference of different type
+
+
+
+```Rust
+
+let m = MyBox::new(String::from("Hello Lam!"));
+hello(&m); // m is MyBox type but has no problem when hello is need a ref to string slice
+
+// &MyBox<String> --> &String --> &str
+
+fn hello(name: &str) {
+  println!("Hello, {}!", name);
+}
+
+```
+
+`// &MyBox<String> --> &String --> &str` 
+Call deref on `m` will return `&string`, call deref on string will return a string slice
+
+WTHeck, Rust see the type being passed to `hello` is different than the type expected it will auto perform chained deref call at compile time to get the correct type 
+
+Without deref cocercion 
+`hello(&(*m)[..])`
+
+First, dereference (*) m to a string then taking a reference to a string slice - the full range of the string 
+
+## Borrowing rules 
+
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>

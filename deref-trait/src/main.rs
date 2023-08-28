@@ -25,4 +25,14 @@ fn main() {
 
   assert_eq!(5, x);
   assert_eq!(5, *y);
+
+
+  let m = MyBox::new(String::from("Hello Lam!"));
+  hello(&m); // m is MyBox type but has no problem when hello is need a ref to string slice
+
+}
+
+
+fn hello(name: &str) {
+  println!("Hello, {}!", name);
 }
