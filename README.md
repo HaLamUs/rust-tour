@@ -128,6 +128,11 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 [Video 22](./smart-pointer/README.md)
 
 
+### Video #23
+<b> Smart Pointers in Rust - The Deref Trait <b/>
+
+[Video 23](./deref-trait/README.md)
+
 </details>
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
