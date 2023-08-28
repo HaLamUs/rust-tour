@@ -6,6 +6,11 @@ This is my Rust playground follow by the list 👇
 https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8&index=1
 
 ## Playlist
+
+<details>
+
+<summary> <b>P10 </b></summary>
+
 ### Video #1
 <b> ULTIMATE Rust Lang Tutorial! - Getting Started <b/>
 
@@ -58,6 +63,14 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 10](./first-10/rust-generic/README.md)
 
+</details>
+
+<details>
+
+<summary>P20</summary>
+
+
+
 ### Video #11
 <b> Traits in Rust <b/>
 
@@ -97,6 +110,13 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 20](./rust-crate/README.md)
 
+</details>
+
+<details>
+
+<summary>P30</summary>
+
+
 ### Video #21
 <b> Cargo Workspaces <b/>
 
@@ -107,6 +127,8 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 22](./smart-pointer/README.md)
 
+
+</details>
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
