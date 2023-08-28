@@ -1,6 +1,6 @@
 # Trait
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video

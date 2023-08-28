@@ -74,41 +74,41 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 ### Video #11
 <b> Traits in Rust <b/>
 
-[Video 11](./rust-trait/README.md)
+[Video 11](./second-10/rust-trait/README.md)
 
 ### Video #12
 <b> Rust Lifetimes Finally Explained! <b/>
 
-[Video 12](./rust-lifetimes/README.md)
+[Video 12](./second-10/rust-lifetimes/README.md)
 
 ### Video #13-14
 <b> Testing in Rust P1 + P2 <b/>
 
-[Video 13 - 14](./rust-testing/README.md)
+[Video 13 - 14](./second-10/rust-testing/README.md)
 
 
 ### Video #15-16
 <b> Writing a CLI App in Rust! - Part 1 + 2 <b/>
 
-[Video 15-16](./simple-cli/README.md)
+[Video 15-16](./second-10/simple-cli/README.md)
 
 
 ### Video #17
 <b> Closures in Rust <b/>
 
-[Video 17](./rust-closure/README.md)
+[Video 17](./second-10/rust-closure/README.md)
 
 
 ### Video #18-19
 <b> Iterators in Rust <b/>
 
-[Video 18-19](./rust-iterators/README.md)
+[Video 18-19](./second-10/rust-iterators/README.md)
 
 
 ### Video #20
 <b> Publishing a Rust Crate! <b/>
 
-[Video 20](./rust-crate/README.md)
+[Video 20](./second-10/rust-crate/README.md)
 
 </details>
 

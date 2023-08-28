@@ -1,6 +1,6 @@
 # Mini grep
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video 1
