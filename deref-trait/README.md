@@ -62,8 +62,31 @@ fn main() {
   assert_eq!(5, *y); // ERROR: MyBox cant be dereferenced 
 ```
 
+### Solved 
+
+```Rust
+impl<T> Deref for MyBox<T> {
+  type Target = T;
+
+  // fn deref(&sefl) -> &Self::Target {
+  fn deref(&sefl) -> &T {
+    &self.0 // first item in MyBox tuple 
+  }
+}
+```
+
+when dereference operator is used we want to return a reference to the item stored in our tuple struct 
+
+### Question 
+
+Why deref dont return the value directly because Rust's ownership system if dref did Rust would move the ownership of the value 
 
 
+The actual code 
+
+```Rust
+assert_eq!(5, *(y.deref()));
+```
 
 
 
