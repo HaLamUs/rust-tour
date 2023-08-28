@@ -1,6 +1,6 @@
 # Rust Crate
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video 

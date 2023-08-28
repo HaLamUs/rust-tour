@@ -1,6 +1,6 @@
 # Testing in Rust
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video 1
