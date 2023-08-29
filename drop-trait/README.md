@@ -10,6 +10,16 @@ Video
 </div>
 
 ## Drop trait 
+The drop trait could be implemented on any type and it allows you to customize what happens when a value goes out of scope.
+
+Example: 
+- Box SP, we want deallocated memory on heap when out of scope 
+- SP uses `lock` we want to release it when it out of scope 
+
+
+
+
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
