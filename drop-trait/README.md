@@ -16,8 +16,15 @@ Example:
 - Box SP, we want deallocated memory on heap when out of scope 
 - SP uses `lock` we want to release it when it out of scope 
 
+## Drop method 
 
+```Rust
+c.drop(); // error 
+drop(c); // supported by Rust 
+```
 
+## Summary
+the drop trait combined with Rust ownership meaning we dont need to take the cleaning up memory. Rust will do that 
 
 
 
