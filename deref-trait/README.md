@@ -121,6 +121,22 @@ Without deref cocercion
 First, dereference (*) m to a string then taking a reference to a string slice - the full range of the string 
 
 ## Borrowing rules 
+Rust will perform the deref cocercion in these cases 
+
+1. From immutable reference to another immutable ref
+2. From mutable reference to another immutable ref
+3. From mutable reference to another immutable ref 
+CAN NOT convert from immutable to mutable because borrowing rule 
+
+Borrow rule states that you can only have one mutable reference to a specific piece of data within a specific scope 
+
+
+Convert a immutable ref to a mutable ref would require that the intial immutable ref is only immutable ref to that piece of data in that scope --> this breaking the rule 
+BECAUSE We can have MANY immutable 
+
+Rules:
+1. one or more references (&T) to a resource - 1 - many 
+2. exactly one mutable reference (&mut T).
 
 
 
