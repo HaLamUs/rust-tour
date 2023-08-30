@@ -44,6 +44,53 @@ fn main() {
 
 ```
 
+### Lifetime reference 
+We can use a lifetime to solve above problem 
+
+<'a> just a syntax
+```
+fn longest<'a>(x: &'a str, y : &'a str) -> &'a str {
+```
+
+But we have this 
+```
+// let a = Cons(5, &Nil); // cant ref nil 
+```
+
+### Solution 
+
+Use RC 
+
+```Rust
+use std::rc::Rc;
+
+enum List {
+  Cons(i32, Rc<List>),
+  Nil
+}
+
+fn main() {
+  let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc:new(Nil)))));
+  let b = Cons(3, a.clone()); // same as below 
+  let c = Cons(4, Rc::clone(&a));
+}
+
+```
+
+```Rc::clone``` this code doesnt make deep copies of the data 
+
+This clone only increments the ref count 
+
+
+```Rust
+
+let b = Cons(3, &a); // miss match type Rc vs &Rc
+let b = Cons(3, a); // will move the owner ship 
+let b = Cons(3, a.clone()); 
+
+```
+
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
