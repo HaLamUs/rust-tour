@@ -10,7 +10,20 @@ Video
 </div>
 
 ## Reference counting 
+RC allows us to share ownership of some data 
 
+### Problem 
+Most of the cases, ownership is clear, we know extractly which variable owns a specific value. But we have cases where a single value has multiple owners for example 
+
+Graph with multiple edges that point to the same node conceptly that node is owned by all the edges 
+
+## RC smart pointer 
+RC SP which will keep track the number of references to a value and when there are no more references the value will get cleaned up 
+
+An analogy: When you watching TV with some friends, you cant turn it off without having ppl watching it
+
+Usecase when we want to allocate a value on the heap and have multip;le parts of our program read that value 
+🔴 This only working in single thread programs 
 
 
 
