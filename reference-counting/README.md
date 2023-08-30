@@ -26,6 +26,25 @@ Usecase when we want to allocate a value on the heap and have multip;le parts of
 🔴 This only working in single thread programs 
 
 
+![alt text](./imgs/cons.png)
+
+
+```Rust
+enum List {
+  Cons(i32, Box<List>),
+  Nil
+}
+
+
+fn main() {
+  let a = Cons(5, Box::new(Cons(10, Box:new(Nil))));
+  let b = Cons(3, Box::new(a));
+  let c = Cons(4, Box::new(a)); // error cause b owns a now // a have been moved into b 
+}
+
+```
+
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
