@@ -133,6 +133,11 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 23](./deref-trait/README.md)
 
+### Video #24
+<b> Smart Pointers in Rust - The Drop Trait <b/>
+
+[Video 24](./drop-trait/README.md)
+
 </details>
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
