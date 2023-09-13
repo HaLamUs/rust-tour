@@ -129,6 +129,25 @@ This is immutable reference
 assert_eq!(mock_messenger.sent_messages.borrow().len(), 1);
 ```
 
+## Notice 
+RefCell sp checks the borrowing rules at runtime and one of the borrowing rules is that we cant have 2 mutable references at the same time 
+
+Example 
+
+```Rust
+impl Messenger for MockMessenger {
+    fn send(&self, message: &str) {
+      let mut one_borrow = self.sent_messages.borrow_mut();
+      let mut two_borrow = self.sent_messages.borrow_mut();
+
+      one_borrow.push(String::from(message));
+      two_borrow.push(String::from(message));
+    }
+  }
+```
+
+If run `cargo test`, test will failed 
+
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
 
