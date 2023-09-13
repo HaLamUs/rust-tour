@@ -17,6 +17,11 @@ This pattern uses unsafe code inside a data structure to bypass the typical rule
 
 Unsafe code is code that is not checked at compile time for memory safety 
 
+Let think that we have a data structure that stores some value and inside that data structure the value is mutable but when we get a reference to that data structure the reference itself is immutable code outside of the data structure would not be able to mutate the data stored within the data structure directly but you can imagine we could call some methods that would mutate the inner value --> IM 
+
+Same idea for RefCell sp but the method will return mutable or immutable reference to the data. RefCell check the reference are valid at runtime 
+
+
 ## RefCell smart pointer 
 RC sp represents single ownership over the data it holds much like the box smart pointer.
 
@@ -41,6 +46,22 @@ THAT is why we have unsafe code
 
 Mutating a value inside an immutable value is called the interior mutability pattern (change inside)
 
+
+## Example 
+
+`*d = 20`, `*` is reference operator 
+
+```Rust
+fn main() {
+  let a = 5;
+  let b = &mut a; // error 
+
+  let mut c = 10;
+  let d = &c;
+  *d = 20; // error 
+}
+
+```
 
 
 
