@@ -71,6 +71,22 @@ pub trait Messenger {
   fn send(&self, msg: &str);
 }
 
+mod tests {
+  use super::*;
+  use std::cell::RefCell;
+
+
+  struct MockMessenger {
+    sent_messages: Vec<String>,
+  }
+
+  impl MockMessenger {
+    fn new() -> MockMessenger {
+      MockMessenger {
+        sent_messages: vec![],
+      }
+    }
+  }
 
 impl Messenger for MockMessenger {
     fn send(&send, message: &str) {
@@ -93,6 +109,25 @@ Still error, so we find ourselves in a predicament we need a mutable so we can m
 
 Use Interior Mutability pattern 
 
+Fix wrap the vec in RefCell 
+
+```Rust
+struct MockMessenger {
+    sent_messages: RefCell<Vec<String>>,
+  }
+```
+
+Then borrow the mutable reference to use 
+
+```Rust 
+self.sent_messages.borrow_mut().push(String::from(message));
+```
+
+This is immutable reference 
+
+```
+assert_eq!(mock_messenger.sent_messages.borrow().len(), 1);
+```
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>

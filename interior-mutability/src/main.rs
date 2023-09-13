@@ -20,7 +20,7 @@ impl<'a, T> LimitTracker<'a, T> where T: Messenger {
   pub fn set_value(&mut self, value: usize) {
     self.value = value;
 
-    let percentage_of_max = self.value as f64 / self.max as f65;
+    let percentage_of_max = self.value as f64 / self.max as f64;
 
     if percentage_of_max >= 1.0 {
       self.messenger.send("Error: You are over your quota!");
@@ -35,22 +35,23 @@ impl<'a, T> LimitTracker<'a, T> where T: Messenger {
 #[cfg(test)]
 mod tests {
   use super::*;
+  use std::cell::RefCell;
 
   struct MockMessenger {
-    sent_messages: Vec<String>,
+    sent_messages: RefCell<Vec<String>>,
   }
 
   impl MockMessenger {
     fn new() -> MockMessenger {
       MockMessenger {
-        sent_messages: vec![],
+        sent_messages: RefCell::new(vec![]),
       }
     }
   }
 
   impl Messenger for MockMessenger {
-    fn send(&send, message: &str) {
-      self.sent_messages.push(String::from(message)); // error 
+    fn send(&self, message: &str) {
+      self.sent_messages.borrow_mut().push(String::from(message));
     }
   }
 
@@ -60,7 +61,7 @@ mod tests {
     let mut limit_tracker = LimitTracker::new(&mock_messenger, 100);
 
     limit_tracker.set_value(80);
-    assert_eq!(mock_messenger.sent_messages.len(), 1);
+    assert_eq!(mock_messenger.sent_messages.borrow().len(), 1);
   }
 
 }
