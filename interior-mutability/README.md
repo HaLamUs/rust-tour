@@ -63,6 +63,36 @@ fn main() {
 
 ```
 
+`'a` lifetime annotation 
+
+```Rust
+
+pub trait Messenger {
+  fn send(&self, msg: &str);
+}
+
+
+impl Messenger for MockMessenger {
+    fn send(&send, message: &str) {
+      self.sent_messages.push(String::from(message)); // error becoz &send is immutable reference 
+    }
+  }
+
+// Fix 
+
+
+
+impl Messenger for MockMessenger {
+    fn send(&mut send, message: &str) {
+      self.sent_messages.push(String::from(message)); // still error cause this is NOT trait Messenger
+    }
+  }
+
+```
+Still error, so we find ourselves in a predicament we need a mutable so we can modify the send messages field on our mock messenger struct HOWEVER we cant get immutable reference in this function because that would break the function signature of send which is defined in our messenger trait 
+
+Use Interior Mutability pattern 
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
