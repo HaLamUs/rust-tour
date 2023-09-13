@@ -144,6 +144,11 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 25](./reference-counting/README.md)
 
+### Video #26
+<b> Smart Pointers in Rust - Interior Mutability <b/>
+
+[Video 26](./interior-mutability/README.md)
+
 
 </details>
 
