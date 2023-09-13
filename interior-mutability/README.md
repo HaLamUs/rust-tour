@@ -10,6 +10,37 @@ Video
 </div>
 
 
+## Interior Mutability 
+IM is design pattern in Rust that allows you to mutate data even when there are immutable references to that data which is typically disallowed by the borrowing rules to mutate data.
+
+This pattern uses unsafe code inside a data structure to bypass the typical rules around mutation and borrowing 
+
+Unsafe code is code that is not checked at compile time for memory safety 
+
+## RefCell smart pointer 
+RC sp represents single ownership over the data it holds much like the box smart pointer.
+
+The difference is the box sp enforces the borrowing rules at compile time whereas the ref cell sp enforces borrowing rules at RUNTIME this means if you break the borrowing rules at runtime your program will panic 
+
+RC sp runs in single thread 
+
+## Halting problem 
+In computability theory, the halting problem is the problem of determining, from a description of an arbitrary computer program and an input, whether the program will finish running, or continue to run forever.
+
+UNDECIDABLE, meaning that no general algorithm exists that solves the halting problem for all possible program–input pairs.
+
+THAT is why we have unsafe code 
+
+
+## Smart pointers 
+
+- Rc<T> enables multiple owners of the same data; Box<T> and RefCell<T> have single owners.
+- Box<T> allows immutable or mutable borrows checked at compile time; Rc<T> allows only immutable borrows checked at complie time; RefCell<T> allows immutable or mutable borrows checked at runtime.
+- Because RefCell<T> allows mutable borrows checked at runtime, you can mutate the value inside the RefCell<T> even when the RefCell<T> is immutable.
+
+
+Mutating a value inside an immutable value is called the interior mutability pattern (change inside)
+
 
 
 
