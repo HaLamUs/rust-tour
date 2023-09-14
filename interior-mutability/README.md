@@ -129,6 +129,81 @@ This is immutable reference
 assert_eq!(mock_messenger.sent_messages.borrow().len(), 1);
 ```
 
+## Final 
+```Rust
+pub trait Messenger {
+  fn send(&self, msg: &str);
+}
+
+pub struct LimitTracker<'a, T: Messenger> {
+  messenger: &'a T,
+  value: usize,
+  max: usize,
+}
+
+impl<'a, T> LimitTracker<'a, T> where T: Messenger {
+  pub fn new(messenger: &T, max: usize) -> LimitTracker<T> {
+    LimitTracker {
+      messenger,
+      value: 0,
+      max
+    }
+  } 
+
+  pub fn set_value(&mut self, value: usize) {
+    self.value = value;
+
+    let percentage_of_max = self.value as f64 / self.max as f64;
+
+    if percentage_of_max >= 1.0 {
+      self.messenger.send("Error: You are over your quota!");
+    } else if percentage_of_max >= 0.9 {
+      self.messenger.send("Urgent warning: You 've used up over 90% of your quota!");
+    } else if percentage_of_max >= 0.75 {
+      self.messenger.send("Warning: You 've used up over 75% of your quota!");
+    }
+  }
+}
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+  use std::cell::RefCell;
+
+  struct MockMessenger {
+    sent_messages: RefCell<Vec<String>>,
+  }
+
+  impl MockMessenger {
+    fn new() -> MockMessenger {
+      MockMessenger {
+        sent_messages: RefCell::new(vec![]),
+      }
+    }
+  }
+
+  impl Messenger for MockMessenger {
+    fn send(&self, message: &str) {
+      let mut one_borrow = self.sent_messages.borrow_mut();
+      let mut two_borrow = self.sent_messages.borrow_mut();
+
+      one_borrow.push(String::from(message));
+      two_borrow.push(String::from(message));
+    }
+  }
+
+  #[test]
+  fn it_sends_an_over_75_percent_warning_message() {
+    let mock_messenger = MockMessenger::new();
+    let mut limit_tracker = LimitTracker::new(&mock_messenger, 100);
+
+    limit_tracker.set_value(80);
+    assert_eq!(mock_messenger.sent_messages.borrow().len(), 1);
+  }
+
+}
+```
+
 ## Notice 
 RefCell sp checks the borrowing rules at runtime and one of the borrowing rules is that we cant have 2 mutable references at the same time 
 
@@ -147,6 +222,46 @@ impl Messenger for MockMessenger {
 ```
 
 If run `cargo test`, test will failed 
+
+## Multiple owners of mutable data 
+Combining the reference counting sp with refCell sp to get multiple owners of mutable data 
+
+`enum List {` we use rc because we wanted to have 2 list that both share a third list 
+RC only store immutable values in this version we want change the value After created 
+
+`Cons(Rc<RefCell<i32>>, Rc<List>),` wraps in RC because we want them to have multiple owners 
+Our i32 wrap in RefCell because we want it mutable 
+
+
+```Rust
+#[derive(Debug)]
+
+enum List {
+  Cons(Rc<RefCell<i32>>, Rc<List>),
+  Nil,
+}
+
+use crate::List::{Cons, Nil};
+use std::cell::RefCell;
+use std::rc::RC;
+
+fn main() {
+  let value = Rc::new(RefCell::new(5));
+
+  let a = Rc::new(Cons(Rc::clone(&value), Rc::new(Nil)));
+
+  let b = Cons(Rc::new(RefCell::new(3)), Rc::clone(&a));
+  let c = Cons(Rc::new(RefCell::new(4)), Rc::clone(&a));
+
+  *value.borrow_mut() += 10;
+  println!("a after = {:?}", a)
+  println!("b after = {:?}", b)
+  println!("c after = {:?}", c)
+}
+```
+
+
+`let a = Rc::new(Cons(Rc::clone(&value), Rc::new(Nil)));` uses clone because we want `value` variable and `a` list both own the value 
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
