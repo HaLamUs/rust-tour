@@ -17,12 +17,48 @@ You can create a memory that is never cleaned up by rc smart pointer, reference 
 
 Using these sp create references where item reference each other each other in a cycle which will create a memory leak 
 
+## Example 
 
+`Option<&RefCell<Rc<List>>>`
 
+We use Rc because we want List have multiple owner.
+We use RefCell because we want to be able to mutate the list 
+
+## Reference cycles
+
+First 
+<img src="./imgs/1.png">
+
+After
+<img src="./imgs/2.png">
+
+```Rust
+  // Uncomment thex next line to see that we have a cycle
+  // it will overflow the stack
+
+  println!("a next item = {:?}", a.tail());
+```
+
+Because we println PRINTLN, a.tail = b, b.tail = a the infinite loop 
+
+### Clean up 
+The stack memory clean up but not the heap memory.
+Because the heap vars still pointing each other. They got orphaned and wont cleaned up 
+
+Step 1
+<img src="./imgs/3.png">
+
+Step 2
+<img src="./imgs/4.png">
 
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
+
+
+Creating Reference cycles is logical bug in your code 
+
+
 
 ## Author
 
