@@ -10,6 +10,16 @@ Video
 </div>
 
 
+## Memory leak 
+Rust guarantee that you CANT have data races but memory leaks.
+
+You can create a memory that is never cleaned up by rc smart pointer, reference counting sp, refcell sp.
+
+Using these sp create references where item reference each other each other in a cycle which will create a memory leak 
+
+
+
+
 
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
