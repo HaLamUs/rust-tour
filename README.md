@@ -149,6 +149,11 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 26](./interior-mutability/README.md)
 
+### Video #27
+<b> Smart Pointers in Rust - Reference Cycles <b/>
+
+[Video 27](./reference-cycles/README.md)
+
 
 </details>
 
