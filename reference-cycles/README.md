@@ -59,6 +59,78 @@ Step 2
 Creating Reference cycles is logical bug in your code 
 
 
+```Rust
+enum List {
+  Cons(i32, RefCell<Rc<List>>),
+  Nil,
+}
+
+impl List {
+  fn tail(&self) -> Option<&RefCell<Rc<List>>> {
+    match self {
+      Cons(_, item) => Some(item),
+      Nil => None,
+    }
+  }
+}
+
+fn main() {
+  let a = Rc::new(Cons(5, RefCell::new(Rc::new(Nil))));
+
+  println!("a initial rc count = {}", Rc::strong_count(&a));
+  println!("a next item {:?}", a.tail());
+
+  let b = Rc::new(Cons(10, RefCell::new(Rc::clone(&a))));
+
+  println!("a rc count after b creation = {}", Rc::strong_count(&a)); // 2
+  println!("b initial rc count = {}", Rc::strong_count(&b)); // 1
+  println!("b next item {:?}", b.tail()); // a 
+
+  if let Some(link) = a.tail() { // Link is nill
+    *link.borrow_mut() = Rc::clone(&b)
+  }
+
+  println!("b rc count after changing a = {}", Rc::strong_count(&b));
+  println!("a rc count after changing a = {}", Rc::strong_count(&a));
+
+  // Uncomment thex next line to see that we have a cycle
+  // it will overflow the stack
+
+  println!("a next item = {:?}", a.tail());
+
+}
+
+```
+
+
+## Fix 
+
+```Rust
+parent:  RefCell<Rc<Node>>, // create reference cycle 
+parent:  RefCell<Weak<Node>>, // because parent drop, children drop either - 1 way 
+
+```
+
+```Rust
+*leaf.parent.borrow_mut() = Rc::downgrade(&branch);
+
+println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
+```
+
+`downgrade` to change reference counting sp to weak sp
+
+`upgrade` convert weak sp to rc sp 
+Because weak sp has no idea, the value droped or not 
+
+## Weak smart pointer 
+Weak sp is a version of the reference counting sp that holds a non-owning reference
+
+## Rc sp
+
+RC sp stores 2 counts
+  - strong_count: number of ref which have ownership of the data 
+  - weak_count: number of ref which doesn't have ownership of the data
+
 
 ## Author
 
