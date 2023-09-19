@@ -12,4 +12,6 @@ fn main() {
     println!("hi number {} from the main thread!", i);
     thread::sleep(Duration::from_millis(1));
   }
+
+  handle.join().unwrap();
 }
