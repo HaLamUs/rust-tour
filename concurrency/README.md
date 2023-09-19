@@ -38,6 +38,26 @@ Such as:
 
 <img src="./imgs/deadlock.png">
 
+## Thread 
+2 kinds:
+
+- one-to-one threads aka os threads, native threads, system threads etc 
+- green threads aka user threads, program thread  etc 
+
+Many operating system provide an api to create new threads one-to-one threads, which mean when you create a thread in your program it maps to an operating system thread ---> one-to-one mapping 
+
+Many programming languages provide their own special implementation of threads which we call green thread. There is no 1-to-1 mapping, 20 green threads that map to only 5 OS threads --> m-to-n 
+
+Each model has its advantages and trade-offs 
+
+The most important trade-off is runtime support, runtime which mean the code that's included by the programming language in every single binary 
+
+If you use green-thread your binary size will increase 
+
+
+
+
+
 
 
 ## Author
