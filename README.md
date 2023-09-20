@@ -155,6 +155,12 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 [Video 27](./reference-cycles/README.md)
 
 
+### Video #28
+<b> Concurrency in Rust - Creating Threads <b/>
+
+[Video 28](./concurrency/README.md)
+
+
 </details>
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
@@ -168,4 +174,4 @@ Follow or connect with me on [my LinkedIn](https://www.linkedin.com/in/lamhacs).
 The source code for the site is licensed under the MIT license, [MIT](https://opensource.org/license/mit/)
 
 
-<img alt="Rate me" src="./assets//rate-me.gif" width="60%">
+<img alt="Rate me" src="./assets/rate-me.gif" width="60%">
