@@ -9,6 +9,19 @@ Video
   <a href="https://www.youtube.com/watch?v=FE1BkKqYCGU"><img src="https://img.youtube.com/vi/FE1BkKqYCGU/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
+## Message passing 
+Using messages to pass data b/w threads. This ensures safe concurrency  
+
+Go' slogan: Do not communicate by sharing memory instead share memory by communicating 
+
+## Channel 
+Using channel for passing messages 
+
+Include 2 parts: transmitter and receiver 
+
+Think about river analogy, the transmitter is the upstream location where you place the rubber duck and the receiver is the downstream location where the rubber duck will END up.
+
+One of your code is calling the function transmitter and another part of your code is listening to the receiver 
 
 
 ## Author
