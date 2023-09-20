@@ -23,6 +23,25 @@ Think about river analogy, the transmitter is the upstream location where you pl
 
 One of your code is calling the function transmitter and another part of your code is listening to the receiver 
 
+## Example 
+
+`use std::sync::mpsc;`
+
+Multi-producer, single-consumer 
+
+`let received = rx.recv().unwrap()`
+
+the `recv` will block the main threads excution while it waits for a message or a value to be sent down the channel 
+
+`let received = rx.try_recv().unwrap()`
+
+the `try_recv` will not block the mrain thread's execution 
+
+Usecase like server listening for upcomming package, every loop we `try_recv` then let the current thread does other work 
+
+
+
+
 
 ## Author
 
