@@ -154,11 +154,16 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 27](./reference-cycles/README.md)
 
-
 ### Video #28
 <b> Concurrency in Rust - Creating Threads <b/>
 
 [Video 28](./concurrency/README.md)
+
+
+### Video #29
+<b> Concurrency in Rust - Message Passing <b/>
+
+[Video 29](./message-concurrency/README.md)
 
 
 </details>
