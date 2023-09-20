@@ -55,10 +55,68 @@ The most important trade-off is runtime support, runtime which mean the code tha
 If you use green-thread your binary size will increase 
 
 
+## Example 
+By default every program has one main thread so in this case we are letting the main thread sleep for 
 
+```Rust
+use std::{thread, time::Duration};
 
+fn main() {
+  thread::spawn(||{
+    for i in 1..10 {
+      println!("hi number {} from the spawned thread!", i);
+      thread::sleep(Duration::from_millis(1));
+    }
+  });
 
+  for i in 1..5 {
+    println!("hi number {} from the main thread!", i);
+    thread::sleep(Duration::from_millis(1));
+  }
+}
 
+```
+
+Notice: the spawn thread didnt finish printing all of its, but the main did 
+So the main thread ends the spawn thread is stopped no matter
+
+So we will wait 
+
+`handle.join()` will block the current thread which is main thread for now 
+until the spawn thread terminates blocking a thread meaning prevented from doing any further 
+
+```Rust
+use std::{thread, time::Duration};
+
+fn main() {
+  let handle = thread::spawn(||{
+    for i in 1..10 {
+      println!("hi number {} from the spawned thread!", i);
+      thread::sleep(Duration::from_millis(1));
+    }
+  });
+
+  handle.join().unwrap(); // 2
+
+  for i in 1..5 {
+    println!("hi number {} from the main thread!", i);
+    thread::sleep(Duration::from_millis(1));
+  }
+
+  handle.join().unwrap(); // 1
+}
+
+```
+
+Depend ons (1) or (2) the output will vary 
+
+## Capture var 
+
+Capture variable in thread's closure 
+We cant use reference because we dont know how long spawn thread will run 
+So we have to move the ownership to the closure 
+
+After `move` we cant use `v` in main thread 
 
 ## Author
 
