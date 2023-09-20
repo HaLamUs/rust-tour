@@ -39,6 +39,76 @@ the `try_recv` will not block the mrain thread's execution
 
 Usecase like server listening for upcomming package, every loop we `try_recv` then let the current thread does other work 
 
+```Rust
+use std::sync::mpsc;
+use std::thread;
+
+fn main() {
+  let (tx, rx) = mpsc::channel();
+
+  thread::spawn(move || {
+    let msg = String::from("hi");
+    tx.send(msg).unwrap();
+  });
+
+  let received = rx.recv().unwrap();
+  println!("Got: {}", received);
+}
+
+```
+
+
+## Ownership rules 
+Ownership rules and how they relate to concurrent code 
+
+```Rust
+
+fn main() {
+  let (tx, rx) = mpsc::channel();
+
+  thread::spawn(move || {
+    let msg = String::from("hi");
+    tx.send(msg).unwrap();
+    println!("msg is {}", msg); // ERROR 
+  });
+
+  let received = rx.recv().unwrap();
+  println!("Got: {}", received);
+}
+
+```
+
+We get error because we would send `msg` to another thread and then afterwards we could potentially modify or drop the variable 
+
+`tx.send(msg).unwrap();` will the ownership of `msg`
+
+```Rust
+fn main() {
+  let (tx, rx) = mpsc::channel();
+
+  thread::spawn(move || {
+    let vals = vec![
+      String::from("hi"),
+      String::from("from"),
+      String::from("the"),
+      String::from("thread"),
+    ];
+    
+    for val in vals {
+      tx.send(val).unwrap();
+      thread::sleep(Duration::from_secs(1));
+    }
+  });
+
+  for received in rx {
+    println!("Got: {}", received);
+  }
+}
+```
+
+## Multiple producer 
+
+Multiple producer to send messages 
 
 
 
