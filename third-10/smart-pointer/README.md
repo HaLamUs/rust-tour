@@ -1,6 +1,6 @@
 # The Box Smart Pointer in Rust
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video 

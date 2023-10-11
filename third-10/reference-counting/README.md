@@ -1,6 +1,6 @@
 # Smart Pointers in Rust - Reference Counting
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video 

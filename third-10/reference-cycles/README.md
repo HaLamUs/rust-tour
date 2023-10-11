@@ -1,6 +1,6 @@
 # Smart Pointers in Rust - Reference Cycles
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video 

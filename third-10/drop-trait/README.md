@@ -1,6 +1,6 @@
 # Smart Pointers in Rust - The Drop Trait
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video 
