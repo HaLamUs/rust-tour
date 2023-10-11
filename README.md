@@ -120,7 +120,7 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 ### Video #21
 <b> Cargo Workspaces <b/>
 
-[Video 21](./cargo-workspace/README.md)
+[Video 21](./third-10/cargo-workspace/README.md)
 
 ### Video #22
 <b> The Box Smart Pointer in Rust <b/>
