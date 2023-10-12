@@ -165,6 +165,11 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 
 [Video 29](./third-10/message-concurrency/README.md)
 
+### Video #30
+<b> Concurrency in Rust - Sharing State <b/>
+
+[Video 30](./third-10/message-concurrency/README.md)
+
 
 </details>
 
