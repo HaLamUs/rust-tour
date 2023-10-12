@@ -33,9 +33,86 @@ Mutex is hard to manage,
 `release` will be handled by Rust automatically
 
 
+```Rust
+
+use std::sync::Mutex;
+
+fn main() {
+  let m = Mutex::new(5);
+
+  {
+    let mut num = m.lock().unwrap();
+    *num = 6;
+  }
+  println!("m = {:?}", m);
+}
+
+```
+
+`move` use to move `counter` variable into the thread 
 
 
+```Rust
+  let counter = Mutex::new(0)
+  for _ in 0..10 {
+    let handle = thread::spawn(move || {
+      let mut num = counter.lock().unwrap();
+      *num += 1;
+    });
 
+    handles.push(handle);
+  }
+```
+
+Error at `move`, because it's already moved in previous iteration 
+
+To allow `counter` to have multiple owners, use Reference counting 
+
+
+```Rust
+  let counter = Rc::new(Mutex::new(0));
+  let mut handles = vec![]!
+
+  for _ in 0..10 {
+    let counter = Rc::clone(&counter);
+    let handle = thread::spawn(move || {
+      let mut num = counter.lock().unwrap();
+      *num += 1;
+    });
+
+    handles.push(handle);
+  }
+```
+
+Here we have an other issue, this reference counting is not a thread safe 
+
+```Rust
+fn main() {
+  let counter = Arc::new(Mutex::new(0));
+  let mut handles = vec![];
+
+  for _ in 0..10 {
+    let counter = Arc::clone(&counter);
+    let handle = thread::spawn(move || {
+      let mut num = counter.lock().unwrap();
+      *num += 1;
+    });
+
+    handles.push(handle);
+  }
+
+  for handle in handles {
+    handle.join().unwrap();
+  }
+
+  println!("Result: {}", *counter.lock().unwrap());
+}
+
+```
+
+We use atomic reference counting 
+
+Despite `counter` is immutable but we are able to get a mutable reference to the value that it holds, and that's because mutex uses interios mutability in the same way that the ref cell smart pointer allows you to mutate a value that's inside an rc smart pointer 
 
 
 
