@@ -171,6 +171,19 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 [Video 30](./third-10/message-concurrency/README.md)
 
 
+
+</details>
+
+<details>
+<summary>P40</summary>
+
+
+### Video #31
+<b> Object Oriented Programming in Rust <b/>
+
+[Video 31](./object-oriented/README.md)
+
+
 </details>
 
 <p><img type="separator" height=8px width="100%" src="https://github.com/HaLamUs/nft-drop/blob/main/assets/aqua.png"></p>
