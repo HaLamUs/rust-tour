@@ -120,12 +120,55 @@ https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H
 ### Video #21
 <b> Cargo Workspaces <b/>
 
-[Video 21](./cargo-workspace/README.md)
+[Video 21](./third-10/cargo-workspace/README.md)
 
 ### Video #22
 <b> The Box Smart Pointer in Rust <b/>
 
-[Video 22](./smart-pointer/README.md)
+[Video 22](./third-10/smart-pointer/README.md)
+
+
+### Video #23
+<b> Smart Pointers in Rust - The Deref Trait <b/>
+
+[Video 23](./third-10/deref-trait/README.md)
+
+### Video #24
+<b> Smart Pointers in Rust - The Drop Trait <b/>
+
+[Video 24](./third-10/drop-trait/README.md)
+
+
+### Video #25
+<b> Smart Pointers in Rust - Reference Counting <b/>
+
+[Video 25](./third-10/reference-counting/README.md)
+
+### Video #26
+<b> Smart Pointers in Rust - Interior Mutability <b/>
+
+[Video 26](./third-10/interior-mutability/README.md)
+
+### Video #27
+<b> Smart Pointers in Rust - Reference Cycles <b/>
+
+[Video 27](./third-10/reference-cycles/README.md)
+
+### Video #28
+<b> Concurrency in Rust - Creating Threads <b/>
+
+[Video 28](./third-10/concurrency/README.md)
+
+
+### Video #29
+<b> Concurrency in Rust - Message Passing <b/>
+
+[Video 29](./third-10/message-concurrency/README.md)
+
+### Video #30
+<b> Concurrency in Rust - Sharing State <b/>
+
+[Video 30](./third-10/message-concurrency/README.md)
 
 
 </details>
@@ -141,4 +184,4 @@ Follow or connect with me on [my LinkedIn](https://www.linkedin.com/in/lamhacs).
 The source code for the site is licensed under the MIT license, [MIT](https://opensource.org/license/mit/)
 
 
-<img alt="Rate me" src="./assets//rate-me.gif" width="60%">
+<img alt="Rate me" src="./assets/rate-me.gif" width="60%">
