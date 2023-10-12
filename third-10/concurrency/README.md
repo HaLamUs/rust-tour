@@ -1,6 +1,6 @@
 # Concurrency in Rust - Creating Threads
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video 

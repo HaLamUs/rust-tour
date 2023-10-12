@@ -1,6 +1,6 @@
 # Smart Pointers in Rust - Reference Counting
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video 
@@ -22,7 +22,7 @@ RC SP which will keep track the number of references to a value and when there a
 
 An analogy: When you watching TV with some friends, you cant turn it off without having ppl watching it
 
-Usecase when we want to allocate a value on the heap and have multip;le parts of our program read that value 
+Usecase when we want to allocate a value on the heap and have multiple parts of our program read that value 
 🔴 This only working in single thread programs 
 
 

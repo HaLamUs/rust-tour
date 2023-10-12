@@ -1,6 +1,6 @@
 # Concurrency in Rust - Message Passing
 
-[⬅ Back](../README.md)
+[⬅ Back](../../README.md)
 
 ## Intro 
 Video 
@@ -35,7 +35,7 @@ the `recv` will block the main threads excution while it waits for a message or 
 
 `let received = rx.try_recv().unwrap()`
 
-the `try_recv` will not block the mrain thread's execution 
+the `try_recv` will not block the main thread's execution 
 
 Usecase like server listening for upcomming package, every loop we `try_recv` then let the current thread does other work 
 
