@@ -26,7 +26,31 @@ Instead of changing the internals directly code OUTSIDE of the object is limited
 ## Pub keyword 
 In rust everything is private by default 
 
+## Inheritance 
+is the ability for an object to inherit from another object's definition gaining the data and behavior of that other object without having to define the data and behavior itself
+NO IN RUST 
 
+There are 2 main reasons for using inheritance
+1. code sharing 
+2. polymorphism
+  allows you to substitute multiple objects for each other at runtime if they share certain characteristics in classical inheritance 
+
+  Example: 
+    Vehicle
+      Truck, motorcycle, bike  
+    
+    ```
+    fn takeObject(obj: Vehicle) {}
+
+    fn main() {
+      let truck = Truck()
+      takeObject(truck)
+      let car = Car()
+      takeObject(car)
+    }
+    ```
+    
+Rust uses generics to abstract away concrete types and use straight bounds to restrict the characteristics of those types 
 
 
 
